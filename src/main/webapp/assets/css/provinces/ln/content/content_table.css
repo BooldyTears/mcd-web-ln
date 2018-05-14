@@ -1,0 +1,192 @@
+body {
+    font-family: "microsoft yahei","Helvetica Neue", Helvetica, Arial, sans-serif,"宋体";
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+}
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.table-content {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+table {
+    background-color: transparent;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table-content-striped > tbody > tr:nth-of-type(0) {
+    background-color: #f9f9f9
+}
+
+.table-content-hover > tbody > tr:hover {
+    background-color: #dff1c7
+}
+.table-content {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px
+}
+
+.table-content > tbody > tr > td, .table-content > tbody > tr > th, .table-content > tfoot > tr > td, .table-content > tfoot > tr > th, .table-content > thead > tr > td, .table-content > thead > tr > th {
+    vertical-align: middle;
+}
+
+.table-content > thead > tr{
+    border-bottom: 2px solid #ddd;
+}
+.table-content > thead > tr > th {
+    vertical-align: bottom;
+    font-size: 14px;
+    color:#444;
+
+}
+
+.table-content .table-content {
+    background-color: #fff
+}
+
+.table-content-condensed > tbody > tr > td, .table-content-condensed > tbody > tr > th, .table-content-condensed > tfoot > tr > td, .table-content-condensed > tfoot > tr > th, .table-content-condensed > thead > tr > td, .table-content-condensed > thead > tr > th {
+    padding: 5px
+}
+
+.table-content-striped > tbody > tr:nth-of-type(0) {
+    background-color: #f9f9f9
+}
+
+.table-content > tbody > tr:hover {
+    background-color: #dcf0c1;
+}
+
+table col[class*=col-] {
+    position: static;
+    display: table-column;
+    float: none
+}
+
+table td[class*=col-], table th[class*=col-] {
+    position: static;
+    display: table-cell;
+    float: none
+}
+
+.table-content > tbody > tr.active > td, .table-content > tbody > tr.active > th, .table-content > tbody > tr > td.active, .table-content > tbody > tr > th.active, .table-content > tfoot > tr.active > td, .table-content > tfoot > tr.active > th, .table-content > tfoot > tr > td.active, .table-content > tfoot > tr > th.active, .table-content > thead > tr.active > td, .table-content > thead > tr.active > th, .table-content > thead > tr > td.active, .table-content > thead > tr > th.active {
+    background-color: #fbfdff
+}
+
+.table-content-hover > tbody > tr.active:hover > td, .table-content-hover > tbody > tr.active:hover > th, .table-content-hover > tbody > tr:hover > .active, .table-content-hover > tbody > tr > td.active:hover, .table-content-hover > tbody > tr > th.active:hover {
+    background-color: #dcf0c1
+}
+
+.table-content > tbody > tr.success > td, .table-content > tbody > tr.success > th, .table-content > tbody > tr > td.success, .table-content > tbody > tr > th.success, .table-content > tfoot > tr.success > td, .table-content > tfoot > tr.success > th, .table-content > tfoot > tr > td.success, .table-content > tfoot > tr > th.success, .table-content > thead > tr.success > td, .table-content > thead > tr.success > th, .table-content > thead > tr > td.success, .table-content > thead > tr > th.success {
+    background-color: #dff0d8
+}
+
+.table-content-hover > tbody > tr.success:hover > td, .table-content-hover > tbody > tr.success:hover > th, .table-content-hover > tbody > tr:hover > .success, .table-content-hover > tbody > tr > td.success:hover, .table-content-hover > tbody > tr > th.success:hover {
+    background-color: #d0e9c6
+}
+
+.table-content > tbody > tr.info > td, .table-content > tbody > tr.info > th, .table-content > tbody > tr > td.info, .table-content > tbody > tr > th.info, .table-content > tfoot > tr.info > td, .table-content > tfoot > tr.info > th, .table-content > tfoot > tr > td.info, .table-content > tfoot > tr > th.info, .table-content > thead > tr.info > td, .table-content > thead > tr.info > th, .table-content > thead > tr > td.info, .table-content > thead > tr > th.info {
+    background-color: #d9edf7
+}
+
+.table-content-hover > tbody > tr.info:hover > td, .table-content-hover > tbody > tr.info:hover > th, .table-content-hover > tbody > tr:hover > .info, .table-content-hover > tbody > tr > td.info:hover, .table-content-hover > tbody > tr > th.info:hover {
+    background-color: #c4e3f3
+}
+
+.table-content > tbody > tr.warning > td, .table-content > tbody > tr.warning > th, .table-content > tbody > tr > td.warning, .table-content > tbody > tr > th.warning, .table-content > tfoot > tr.warning > td, .table-content > tfoot > tr.warning > th, .table-content > tfoot > tr > td.warning, .table-content > tfoot > tr > th.warning, .table-content > thead > tr.warning > td, .table-content > thead > tr.warning > th, .table-content > thead > tr > td.warning, .table-content > thead > tr > th.warning {
+    background-color: #fcf8e3
+}
+
+.table-content-hover > tbody > tr.warning:hover > td, .table-content-hover > tbody > tr.warning:hover > th, .table-content-hover > tbody > tr:hover > .warning, .table-content-hover > tbody > tr > td.warning:hover, .table-content-hover > tbody > tr > th.warning:hover {
+    background-color: #faf2cc
+}
+
+.table-content > tbody > tr.danger > td, .table-content > tbody > tr.danger > th, .table-content > tbody > tr > td.danger, .table-content > tbody > tr > th.danger, .table-content > tfoot > tr.danger > td, .table-content > tfoot > tr.danger > th, .table-content > tfoot > tr > td.danger, .table-content > tfoot > tr > th.danger, .table-content > thead > tr.danger > td, .table-content > thead > tr.danger > th, .table-content > thead > tr > td.danger, .table-content > thead > tr > th.danger {
+    background-color: #f2dede
+}
+
+.table-content-hover > tbody > tr.danger:hover > td, .table-content-hover > tbody > tr.danger:hover > th, .table-content-hover > tbody > tr:hover > .danger, .table-content-hover > tbody > tr > td.danger:hover, .table-content-hover > tbody > tr > th.danger:hover {
+    background-color: #ebcccc
+}
+
+.table-content-responsive {
+    min-height: .01%;
+    overflow-x: auto
+}
+
+@media screen and (max-width: 767px) {
+    .table-content-responsive {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd
+    }
+
+    .table-content-responsive > .table-content {
+        margin-bottom: 0
+    }
+
+    .table-content-responsive > .table-content > tbody > tr > td, .table-content-responsive > .table-content > tbody > tr > th, .table-content-responsive > .table-content > tfoot > tr > td, .table-content-responsive > .table-content > tfoot > tr > th, .table-content-responsive > .table-content > thead > tr > td, .table-content-responsive > .table-content > thead > tr > th {
+        white-space: nowrap
+    }
+
+    .table-content-responsive > .table-content-bordered {
+        border: 0
+    }
+
+    .table-content-responsive > .table-content-bordered > tbody > tr > td:first-child, .table-content-responsive > .table-content-bordered > tbody > tr > th:first-child, .table-content-responsive > .table-content-bordered > tfoot > tr > td:first-child, .table-content-responsive > .table-content-bordered > tfoot > tr > th:first-child, .table-content-responsive > .table-content-bordered > thead > tr > td:first-child, .table-content-responsive > .table-content-bordered > thead > tr > th:first-child {
+        border-left: 0
+    }
+
+    .table-content-responsive > .table-content-bordered > tbody > tr > td:last-child, .table-content-responsive > .table-content-bordered > tbody > tr > th:last-child, .table-content-responsive > .table-content-bordered > tfoot > tr > td:last-child, .table-content-responsive > .table-content-bordered > tfoot > tr > th:last-child, .table-content-responsive > .table-content-bordered > thead > tr > td:last-child, .table-content-responsive > .table-content-bordered > thead > tr > th:last-child {
+        border-right: 0
+    }
+
+    .table-content-responsive > .table-content-bordered > tbody > tr:last-child > td, .table-content-responsive > .table-content-bordered > tbody > tr:last-child > th, .table-content-responsive > .table-content-bordered > tfoot > tr:last-child > td, .table-content-responsive > .table-content-bordered > tfoot > tr:last-child > th {
+        border-bottom: 0
+    }
+}
+
+.container-table {
+    padding-right: 7px;
+    padding-left: 7px;
+    margin-right: auto;
+    margin-left: auto
+}
+.table-content > tbody > tr > td > span >select{
+    height:20px;
+    cursor: pointer;
+}
+.table-content > tbody > tr > td > span{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table-content > thead > tr > th > span{
+    display: inline-block;
+    border: 1px solid #fbfdff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table-content > tbody > tr > td{
+    color:#666;
+    cursor: pointer;
+}
+th,td,td > input{
+    text-align: center;
+}
+.table-content tr {
+    height: 46px;
+}

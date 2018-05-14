@@ -1,0 +1,20 @@
+/**
+*表格相关
+*/
+.public-table{table-layout: fixed;}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+	vertical-align: middle;
+}
+.search-tab-wrp{padding:0 10px;}
+.table.public-table > thead> tr > th{border: 1px solid #d4dfe7 !important;border-right:0 !important;border-left:0 !important;background-color: #edf1f4;}
+.table.public-table > tbody > tr > th, .table.public-table > tfoot > tr > th, .table.public-table > thead > tr > td, .table.public-table > tbody > tr > td, .table.public-table > tfoot > tr > td{border:0;}
+.table.public-table tr.odd td{background-color: #fff;}
+.table.public-table tr.even td{background-color: #f7f9fa;}
+.table.public-table tr:hover td{background-color: #ecf4fc;}
+.table.public-table tr:hover td:nth-child(1){border-left:2px solid #278cde;}
+.table.public-table tr:hover a.hover-a{text-decoration: underline; color: #278cde;}
+/*产品政策弹窗*/
+.table-edit td{text-align: center;}
+.table-edit td.left-hd{background: #edf1f4 !important;}
+.table-edit tr.tr-2 td{background:#f7f9fa;}
+.detail-btn{display: inline-block;margin-top:5px;}

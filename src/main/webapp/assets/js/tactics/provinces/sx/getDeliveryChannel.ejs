@@ -1,0 +1,417 @@
+<table class="content-table-box content-table-list channel－info">
+	<tr>
+		<th class="content-table-th" style="width:15%">渠道名称</th>
+		<th class="content-table-th" style="width:15%">渠道配置信息类型</th>
+		<th class="content-table-th" style="width:70%">渠道配置信息描述</th>
+	</tr>
+	
+	<%for(var i in data){%>
+		<% 
+		     var channelId = data[i].channel_id;
+		     var mcdChannelDefExtList = data[i].mcdChannelDefExtList;
+		     
+		     var fileNames=data[i].attachment.split(",");
+            	if(fileNames.length>0){
+	        		var defaultName = fileNames[0];
+	        		var downLoadName =fileNames[1];
+	        	}
+	        var tmpUrl = _ctx+"/action/sx/ftpUploadDown/doDownload.do?fileUrl="+downLoadName;
+		 %>
+		<% if(channelId == '921' || channelId == '931'){%>
+		<%
+ 			var adivIds = data[i].channelAdivId;
+ 			var adivName = "";
+ 			if(adivIds.match(",")){
+ 			    var adivIdArr = adivIds.split(",");
+ 			    if(channelId  == '931'){
+					for(var x = 0; x < adivIdArr.length; x++){
+						if(x != adivIdArr.length -1){
+							if(adivIdArr[x].match("101")){
+								adivName += "1_话费查询_101, ";
+							}else if(adivIdArr[x].match("102")){
+								adivName += "2_话费查询_102, ";
+							}else if(adivIdArr[x].match("CXJF")){
+								adivName += "3_积分查询_CXJF, ";
+							}else if(adivIdArr[x].match("1051")){
+								adivName += "4_流量查询_1051, ";
+							}else{
+								adivName += "5_数据流量查询_3053, "
+							}
+						}else{
+							if(adivIdArr[x].match("101")){
+								adivName += "1_话费查询_101";
+							}else if(adivIdArr[x].match("102")){
+								adivName += "2_话费查询_102";
+							}else if(adivIdArr[x].match("CXJF")){
+								adivName += "3_积分查询_CXJF";
+							}else if(adivIdArr[x].match("1051")){
+								adivName += "4_流量查询_1051";
+							}else{
+								adivName += "5_数据流量查询_3053"
+							}
+						}
+					}
+				}else{
+					for(var y = 0; y < adivIdArr.length; y++){
+						if(y != adivIdArr.length -1){
+							if(adivIdArr[y].match("1001")){
+								adivName += "1001_话费收取, ";
+							}else if(adivIdArr[y].match("1002")){
+								adivName += "1002_流量未完, ";
+							}else if(adivIdArr[y].match("1003")){
+								adivName += "1003_流量超出, ";
+							}else if(adivIdArr[y].match("1004")){
+								adivName += "1004_流量未使用, ";
+							}else if(adivIdArr[y].match("1005")){
+								adivName += "1005_定期提醒, ";
+							}else if(adivIdArr[y].match("1006")){
+								adivName += "1006_话费提醒, ";
+							}else{
+								adivName += "1007_无套餐用户提醒, ";
+							}
+						}else{
+							if(adivIdArr[y].match("1001")){
+								adivName += "1001_话费收取";
+							}else if(adivIdArr[y].match("1002")){
+								adivName += "1002_流量未完";
+							}else if(adivIdArr[y].match("1003")){
+								adivName += "1003_流量超出";
+							}else if(adivIdArr[y].match("1004")){
+								adivName += "1004_流量未使用";
+							}else if(adivIdArr[y].match("1005")){
+								adivName += "1005_定期提醒";
+							}else if(adivIdArr[y].match("1006")){
+								adivName += "1006_话费提醒";
+							}else{
+								adivName += "1007_无套餐用户提醒";
+							}
+						}
+					}
+				}
+			}else{
+				adivName = data[i].adivName;
+			}
+ 		%>
+		
+			<tr class="even">
+			    <td rowspan="<%=mcdChannelDefExtList.length+3%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+				<td class="content-table-td" >业务场景</td>
+				<td class="content-table-td" ><%=adivName%></td>
+			</tr>
+			<tr class="even">	
+			   <td class="content-table-td">附件</td>
+			   <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+		    </tr>
+			<tr class="even">	
+				<td class="content-table-td">推荐用语</td>
+				<td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+			</tr>
+			<%for(var j in mcdChannelDefExtList){%>
+	            <tr class="even">
+					<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+					<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+	            </tr>
+            <%}%>
+			<% }else if(channelId == '922'){   %>
+			<tr class="even">
+				<td rowspan="<%=mcdChannelDefExtList.length+2%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+				<td class="content-table-td">推荐用语</td>
+				<td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+			</tr>
+			<tr class="even">	
+			    <td class="content-table-td">附件</td>
+			    <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+		     </tr>
+			<%for(var j in mcdChannelDefExtList){%>
+				<tr class="even">
+					<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+					<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+				</tr>
+			<%}%>
+            
+            <% }else if(channelId == '932'){   %>
+           
+                  <tr class="even">
+			            <td rowspan="<%=mcdChannelDefExtList.length+4%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+				        <td class="content-table-td" >运营位</td>
+				        <td class="content-table-td" ><%=data[i].adivName%></td>
+			      </tr>
+			      <tr class="even">	
+				    <td class="content-table-td">附件</td>
+				    <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+			      </tr>
+			      <tr class="even">	
+				      <td class="content-table-td">URL</td>
+				      <td class="content-table-td" ><div  title="<%=data[i].handleUrl%>"><%=data[i].handleUrl%></div></td>
+			      </tr>
+			      <tr class="even">	
+				      <td class="content-table-td">推荐用语</td>
+				      <td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+			      </tr>
+				<%for(var j in mcdChannelDefExtList){%>
+		            <tr class="even">
+						<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+						<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+		            </tr>
+	            <%}%>
+	          
+	          <% }else if(channelId == '901'){   %>
+         
+			      <tr class="even">
+			      	  <td rowspan="<%=mcdChannelDefExtList.length+3%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>	
+				      <td class="content-table-td">短信推荐用语</td>
+				      <td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+			      </tr>
+			      <tr class="even">	
+				    <td class="content-table-td">附件</td>
+				    <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+			      </tr>
+				<%for(var j in mcdChannelDefExtList){%>
+		              <%if(mcdChannelDefExtList[j].attrDisplayName =='营销用户范围'){%>
+				    <%if(mcdChannelDefExtList[j].attrDisplayValue !=''){%>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" >短信类型</td>
+							<td rowspan="1" class="content-table-td" >实时短信</td>
+						</tr>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue==0?'是':'否'%></td>
+						</tr>
+					<%}else{%>
+					<tr class="even">
+							<td rowspan="1" class="content-table-td" >短信类型</td>
+							<td rowspan="1" class="content-table-td" >批量短信</td>
+						</tr>
+					<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ></td>
+					</tr>
+					<%}%>
+				  <%}else{%>	
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+						</tr>
+				  <%}%>
+	            <%}%>
+				<% }else if(channelId == '933' || channelId == '934'|| channelId == '935' || channelId == '936' ){   %>
+					<tr class="even">
+						<td rowspan="<%=mcdChannelDefExtList.length+3%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+						<td class="content-table-td">推荐用语</td>
+						<td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+					</tr>
+					<tr class="even">	
+					    <td class="content-table-td">附件</td>
+					    <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+				    </tr>
+					<tr class="even">
+						<td class="content-table-td" >运营位</td>
+						<td class="content-table-td" ><%=data[i].adivName%></td>
+					</tr>
+				<%for(var j in mcdChannelDefExtList){%>
+					<% if (mcdChannelDefExtList[j].attrDisplayName == "是否预校验"){%>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue ==1?'是':'否'%></td>
+						</tr>
+						<%}else{%>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+						</tr>
+					<%}%>
+				<%}%>
+				<% }else if(channelId == '998'||channelId == '997'){   %>
+				     <tr class="even">
+				     <%if(channelId == '998'){%>
+					<td rowspan="<%=mcdChannelDefExtList.length+6%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+					<%} else if(channelId == '997'){%>
+					<td rowspan="<%=mcdChannelDefExtList.length+2%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+					<%}%>
+					    <td class="content-table-td">附件</td>
+					    <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+				    </tr>
+				     <%if(channelId == '998'){%>
+					<tr class="even">
+						<td class="content-table-td" >运营位</td>
+						<td class="content-table-td" ><%=data[i].adivName%></td>
+					</tr>
+				    <%}%>
+					<tr class="even">
+						<td class="content-table-td">推荐用语</td>
+						<td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+					</tr>
+				<%for(var j in mcdChannelDefExtList){%>
+					<% if (mcdChannelDefExtList[j].attrDisplayName == "素材ID"){%>
+				<%
+				  var materialId = mcdChannelDefExtList[j].attrDisplayValue;
+			      var _acturl= contextPath +"/action/iop/template/loadImage.do?materialId="+materialId;
+			      var materialType ="";
+			      var materialName ="";
+			      var targetUrl= "";
+			      $.ajax({
+            		url:contextPath+"/action/iop/template/queryMaterialById.do",
+            		async: false,
+            		data:{"materialId":materialId},
+            		success:function(result){
+            			if(!result){return;}
+            			 for(var i=0;i<result.length;i++){
+            			  	 materialType =result[i].typeName;
+			     			 materialName =result[i].name;
+                        	 targetUrl =result[i].targetUrl;
+                        	 
+                        }
+            			
+            		},
+            		error:function (e){
+            			alert("查询信息失败");
+            		}
+            	});
+			    %>
+			  
+			 
+			     <tr class="even">
+				  <td class="content-table-td" >素材类型</td>
+				  <td class="content-table-td" ><%=materialType%></td>
+			    </tr>
+			    <tr class="even">
+				  <td class="content-table-td" >选择素材</td>
+				  <td class="content-table-td" ><%=materialName%></td>
+			    </tr>
+			     <tr class="even">
+				  <td class="content-table-td" >素材跳转地址</td>
+				  <td class="content-table-td" ><%=targetUrl%></td>
+			    </tr>
+			    <tr class="even">
+				  <td class="content-table-td" >素材预览</td>
+				  <td class="content-table-td" ><img src="<%=_acturl%>"  style="width:150px;height:80px"/></td>
+			    </tr>
+			  
+					<%}else{%>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+						</tr>
+					<%}%>
+				<%}%>
+			<% }else if(channelId == '916'||channelId == '917'||channelId == '919'||channelId == '920'){   %>
+			 <tr class="even">	
+			   			<td rowspan="<%=mcdChannelDefExtList.length+4%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+					    <td class="content-table-td">推荐用语</td>
+					    <td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+				</tr>
+				 <tr class="even">
+				  <td class="content-table-td" >运营位</td>
+				  <td class="content-table-td" ><%=data[i].adivName%></td>
+			    </tr>
+			   <tr class="even">	
+					    <td class="content-table-td">附件</td>
+					    <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+				</tr>
+				
+				<%for(var j in mcdChannelDefExtList){%>
+					<% if (mcdChannelDefExtList[j].attrDisplayName == "素材ID"){%>
+				<%
+				  var materialId = mcdChannelDefExtList[j].attrDisplayValue;
+			      var _acturl= contextPath +"/action/iop/template/loadImage.do?materialId="+materialId;
+			      var materialType ="";
+			      var materialName ="";
+			      var targetUrl= "";
+			      $.ajax({
+            		url:contextPath+"/action/iop/template/queryMaterialById.do",
+            		async: false,
+            		data:{"materialId":materialId},
+            		success:function(result){
+            			if(!result){return;}
+            			 for(var i=0;i<result.length;i++){                           
+			     			 materialName =result[i].name;
+                        	 
+                        }
+            			
+            		},
+            		error:function (e){
+            			alert("查询信息失败");
+            		}
+            	});
+			    %>
+			    <tr class="even">
+				  <td class="content-table-td" >选择素材</td>
+				  <td class="content-table-td" ><%=materialName%></td>
+			    </tr>
+			    <tr class="even">
+				  <td class="content-table-td" >素材预览</td>
+				  <td class="content-table-td" ><img src="<%=_acturl%>"  style="width:150px;height:80px"/></td>
+			    </tr>
+			  
+					<%}else{%>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+						</tr>
+					<%}%>
+				<%}%>
+				
+			<% }else if(channelId == '937'|| channelId == '938' || channelId == '939' ){   %>
+					<tr class="even">
+					<% if(channelId =='939'){%>
+					<td rowspan="<%=mcdChannelDefExtList.length+3%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>	
+					<%}else{%>
+					<td rowspan="<%=mcdChannelDefExtList.length+2%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+					<%}%>
+						<td class="content-table-td" >运营位</td>
+						<td class="content-table-td" ><%=data[i].adivName%></td>
+					</tr>
+					<tr class="even">
+						<td class="content-table-td">推荐用语</td>
+						<td class="content-table-td" ><div  title="<%=data[i].exec_content.replace(new RegExp(/"/g),'“')%>"><%=data[i].exec_content%></div></td>
+					</tr>
+					
+				<%for(var j in mcdChannelDefExtList){%>
+				   <%if(mcdChannelDefExtList[j].attrDisplayName =='营销用户范围'){%>
+				    <%if(mcdChannelDefExtList[j].attrDisplayValue !=''){%>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" >短信类型</td>
+							<td rowspan="1" class="content-table-td" >实时短信</td>
+						</tr>
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue==0?'是':'否'%></td>
+						</tr>
+					<%}else{%>
+					<tr class="even">
+							<td rowspan="1" class="content-table-td" >短信类型</td>
+							<td rowspan="1" class="content-table-td" >批量短信</td>
+						</tr>
+					<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ></td>
+					</tr>
+					<%}%>
+						
+				  <%}else{%>	
+						<tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+						</tr>
+				  <%}%>
+				<%}%>
+				
+            <% }else{ %>
+	            <tr class="even">	
+				    <td rowspan="<%=mcdChannelDefExtList.length+1%>" class="content-table-td" style="background:#fff"><%=data[i].channel_name%></td>
+				    <td class="content-table-td">附件</td>
+				    <td class="content-table-td" ><a href="<%=tmpUrl%>" downLoadName="<%=downLoadName%>"><%=defaultName%></a></td>
+			    </tr>
+            
+	            <%for(var j in mcdChannelDefExtList){%>
+			            <tr class="even">
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayName%></td>
+							<td rowspan="1" class="content-table-td" ><%=mcdChannelDefExtList[j].attrDisplayValue%></td>
+			            </tr>
+	            <%}%>
+	            
+	            
+		<% }%>
+		 
+	<%}%>
+</table>

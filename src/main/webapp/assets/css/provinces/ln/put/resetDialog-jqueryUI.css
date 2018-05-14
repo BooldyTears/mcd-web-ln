@@ -1,0 +1,228 @@
+.btnOrange {
+  padding: 5px 15px;
+  background-color: #ffa01e;
+  color: #fff;
+  cursor: pointer;
+}
+.bigButton {
+  border: none;
+  background: #ffa01e;
+  width: 220px;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 2px;
+  width: 218px;
+  height: 46px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 16px;
+  padding: 0;
+  margin: 0 7px;
+}
+.ok-button {
+  border: none;
+  background: #ffa01e;
+  width: 220px;
+  height: 46px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 16px;
+  padding: 0;
+  margin: 0 7px;
+  border-radius: 2px;
+}
+.ui-widget-content .ui-state-default.ok-small-button {
+  border: none;
+  background: #278BDD;
+  width: 56px;
+  height: 26px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 22px;
+  padding: 0;
+  margin: 0 7px;
+  font-weight: normal;
+  border-radius: 2px;
+}
+.ui-widget-content .ui-state-default.ok-small2-button {
+  border: none;
+  background: #FFA01E;
+  width: 56px;
+  height: 26px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 22px;
+  padding: 0;
+  margin: 0 7px;
+  font-weight: normal;
+  border-radius: 2px;
+}
+.ui-widget-content .ui-state-default.gray-small-button {
+  border: none;
+  background: #adaaa5;
+  width: 80px;
+  height: 26px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 22px;
+  padding: 0;
+  margin: 0 7px;
+  font-weight: normal;
+  border-radius: 2px;
+}
+.ui-widget-content .ui-state-default.gray-small2-button {
+  border: none;
+  background: #adaaa5;
+  width: 80px;
+  height: 26px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 22px;
+  padding: 0;
+  margin: 0 7px;
+  font-weight: normal;
+  border-radius: 2px;
+}
+.ui-widget-content .ui-state-default.ok-small2-button:hover {
+  border: none;
+  background: #ffb200;
+}
+.ui-widget-content .ui-state-default.gray-small-button:hover {
+  background: #999999;
+}
+.ui-widget-content .ui-state-default.gray-small2-button:hover {
+  background: #999999;
+}
+.ui-widget-content .ui-state-default.ok-small-button:hover {
+  background: #1976c4;
+}
+.ui-dialog {
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #fff;
+}
+.ui-dialog .ui-widget-content .ui-state-default.ok-button {
+  border: none;
+  background: #ffa01e;
+  width: 220px;
+  height: 46px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 16px;
+  padding: 0;
+  margin: 0 7px;
+  border-radius: 2px;
+}
+.ui-dialog .ui-widget-content .ui-state-default.ok-button:hover {
+  border: none;
+  background: #ffb200;
+}
+.ui-dialog .ui-widget-content .ui-state-default.ok-button:active {
+  border: none;
+  background: #ffa01e;
+}
+.ui-dialog .ui-dialog-content {
+  padding: 0;
+}
+.ui-dialog .ui-widget-content .ui-state-default.ok-button .ui-icon {
+  border: none;
+  background: #ffa01e;
+}
+.ui-dialog .ui-dialog-buttonpane {
+  padding: 17px 25px 17px 0;
+  margin: 0;
+  background: #f7f7f7;
+}
+.ui-dialog .ui-dialog-buttonpane .bigButton {
+  border: none;
+  background: #ffa01e;
+  width: 220px;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 2px;
+  width: 218px;
+  height: 46px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 16px;
+  padding: 0;
+  margin: 0 7px;
+}
+.ui-dialog .ui-dialog-buttonpane .bigButton .ui-icon {
+  border: none;
+  background: none;
+}
+.ui-dialog .ui-dialog-buttonpane .orange {
+  background: #ffa01e;
+}
+.ui-dialog .ui-dialog-buttonpane .blue {
+  background: #278cde;
+}
+.ui-dialog .ui-dialog-buttonpane .blue:hover {
+  background: #009bf5;
+}
+.ui-dialog .ui-dialog-buttonpane .blue:active {
+  background: #1987e6;
+}
+.ui-dialog .ui-widget-header {
+  border: none;
+  background: #278bdd;
+  border-radius: 2px;
+  padding: 0;
+  width: 100%;
+  height: 48px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  font-size: 16px;
+  cursor: move;
+  color: #fff;
+  line-height: 48px;
+  text-indent: 20px;
+}
+.ui-dialog .ui-widget-header .ui-dialog-titlebar-close {
+  border: none;
+  background: #278bdd;
+  background-image: url('../images/close.png');
+}

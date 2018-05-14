@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* 产品库使用的公共样式 */
+body {
+    font-family: "microsoft yahei","Helvetica Neue", Helvetica, Arial, sans-serif,"宋体";
+}
+html {
+    *overflow-x: auto;
+    *overflow-y: scroll;
+}
+.fB {
+    font-weight: bold;
+}
+.yellow {
+    color: #fd9f3a;
+}
+.clearCustomerBtn {
+    width: 42px;
+    height: 24px;
+    background-color: #278bdd;
+    color: #fff;
+}
+.ui-page-num {
+    width: 30px;
+    height: 22px;
+    border: 1px solid #e2e2e2;
+    margin: 3px 15px 0px 5px;
+    position: relative;
+    z-index: 100;
+}
+.container .content .content-main .content-table .ui-page-button {
+    width: 66px;
+    height: 22px;
+    overflow: hidden;
+    margin: 3px 10px 0 0;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    color: #333;
+    line-height: 22px;
+    border: 1px solid #e8ebec;
+    background: #fff;
+}
+
+.btn-blu{
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background-color: #278bdd ;
+    color: #f3f3f3;
+}
+.btn-blu:hover{
+    background-color: #227bc8;
+}
+
+.input{
+    height:30px;
+    font-size: 14px;
+    padding: 0 5px;
+}
+.min-input{
+    height:25px;
+    font-size: 13px;
+    padding: 0 5px;
+}
+.min-input-min-width{
+    width: 149px;
+}
+.min-input-lg-width{
+    width: 87%;
+}
+
+.input,.min-input{
+   border: 1px solid #ccc;
+}
+.input:focus,.min-input:focus{
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(0,0,0,0.15);
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+span{
+    text-align: center;
+    vertical-align: middle;
+}
+.table-bordered {
+    border: 1px solid #ddd
+}
+.btn-pref{
+    left:0px;
+    z-index: 10;
+}
+.btn-next{
+    right:0px;
+    z-index: 10;
+}
+.more_select{
+    list-style: none;
+    display: inline-block;
+    overflow: visible;
+    vertical-align: middle;
+    position: absolute;
+    margin-left: 4px;
+    z-index:101;
+}
+.more_select li{
+    width: 149px;
+    border: 1px solid #ccc;
+    height: 24px;
+    z-index: 101;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #fff;
+}
+.one_li{
+    border: 1px solid #ccc;
+    position: relative;
+}
+.channel_input{
+    width:80%;
+    height: 100%;
+}
+
+.one_li:focus{
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2), 0 2px 1px rgba(0,0,0,0.15);
+
+}
+.one_li > img{
+    position: absolute;
+    right:5px;
+    height: 100%;
+}

@@ -1,0 +1,112 @@
+.ui-widget.ui-widget-content{border:0;}
+.ui-widget.ui-widget-content.ui_tpicker_hour_slider,
+.ui-widget.ui-widget-content.ui_tpicker_minute_slider,
+.ui-widget.ui-widget-content.ui_tpicker_second_slider
+ {border:1px solid #c5c5c5;}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button,.ui-widget.ui-widget-content{font-family:"microsoft yahei";}
+.ui-dialog{padding:0;}
+.ui-dialog .ui-widget-header {
+    background: #278bdd;
+    color: #fff;
+    font-weight: 400;
+    padding: 0em 1em;
+    font-size: 16px;
+    height: 52px;
+    line-height: 48px;
+    border:none;
+}
+.ui-dialog.gradient-dialog .ui-widget-header{
+	background:url(../../../images/put/dialog-head.png) repeat-x ;
+    color: #fff;
+    font-weight: 400;
+    padding: 0em 1em;
+    font-size: 16px;
+    height:50px;
+    border:none;
+    line-height: 50px;
+    border-bottom:3px solid #99b8f3;
+    overflow: hidden;
+}
+.ui-dialog-titlebar em{
+	font-size: 12px;
+	cursor: pointer;
+}
+.ui-dialog-titlebar i{
+	cursor: pointer;
+	margin:0 20px 0 10px;
+	background:url(../../../images/put-img.png) no-repeat no-repeat -1px -76px;
+	display: inline-block;
+	width: 24px;
+	height:24px;
+	position: relative;
+	top:11px;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br{
+	border-radius: 0;
+}
+.ui-button{border:0;}
+.ui-dialog .ui-widget-header .ui-button{
+    background: none;
+    border: 0px;
+}
+.ui-dialog .ui-dialog-buttonpane {
+    border:  0;
+    background: #ebf0f3;
+}
+.ui-widget-overlay{
+    background: #000;
+}
+.ui-dialog .ui-dialog-content{
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.ui-dialog .ui-widget-header .ui-button .ui-button-icon.ui-icon.ui-icon-closethick,.ui-dialog .ui-dialog-titlebar-close{
+    background: url(../../../images/put-img.png) no-repeat no-repeat -99px -2px;
+    margin-left: -12px;
+}
+.ui-dialog.gradient-dialog .ui-widget-header .ui-button .ui-button-icon.ui-icon.ui-icon-closethick{
+    background: url(../../../images/put-img.png) no-repeat no-repeat -3px -302px;
+    margin-left: -12px;
+    width: 27px;
+    height:27px;
+    margin-top:-13px;
+    margin-right:10px;
+}
+.ui-dialog.gradient-dialog .ui-dialog-titlebar-close{
+	right:13px;
+}
+.ui-dialog .dialog-btn{
+    width: 100px;
+    height: 30px;
+    background: #2e81e2;
+    color: #fff;
+    font-size: 14px; 
+}
+.ui-dialog .dialog-btn-blue{
+    background: #2e81e2;
+}
+.ui-dialog .dialog-btn-gray{
+    background: #b4b4b4;
+}
+.ui-dialog .dialog-btn-orange{
+    background: #ff9314;
+    margin-right:153px !important;
+}
+.own-dialog{
+	width:100% !important;
+}
+.rows-box{
+	border-bottom:1px dashed #efefef;
+	margin:10px 0;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+	padding:0 10px;
+}
+.width-118{width: 118px;}
+.width-130{width: 130px;}
+.productDetail-dialog .text-left{color: #666;}
+.date-error{padding-left:188px;}
+.gradient-dialog {background: #d9e7fe;}
+.save-dialog form{
+	padding-top:24px;
+}

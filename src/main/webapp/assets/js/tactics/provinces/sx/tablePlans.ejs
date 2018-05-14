@@ -1,0 +1,75 @@
+<%if(data.length > 0){%>
+	<%
+	for(var i=0;i<data.length;i++){
+		var plan=data[i];
+		var index=i+1;
+		
+		var moreInfo ={};
+		moreInfo.planId = plan.planId;
+		moreInfo.planName=plan.planName;
+		moreInfo.typeName=plan.typeName;
+		moreInfo.planSrvType=plan.planSrvType;
+		moreInfo.chnlScore=plan.chnlScore;
+		moreInfo.smsScore=plan.smsScore;
+		moreInfo.planStartdate=plan.planStartdate;
+		moreInfo.planEnddate=plan.planEnddate;
+
+		var planStartdate=plan.planStartdate;
+		if(planStartdate){
+			planStartdate=new XDate(planStartdate);
+			planStartdate=planStartdate.toString("yyyy-MM-dd");
+		}
+		
+		plan.planStartdate=planStartdate;
+		
+		var planEnddate=plan.planEnddate;
+		if(planEnddate){
+			planEnddate=new XDate(planEnddate);
+			planEnddate=planEnddate.toString("yyyy-MM-dd");
+		}
+		plan.planEnddate=planEnddate;
+		
+		
+		moreInfo.planIsUsed=plan.isUsed
+		
+		var info = JSON.stringify(moreInfo)
+		info = info.replace(/"/g,"'");
+	%>
+		<tr data-info="<%=info%>">
+			<td class="text-center"><%=index%></td>
+			<td class="text-left">
+				<a href="javascript:;" class="showPlanInfo">
+					<em>
+						<%=plan.planId%>
+					</em>
+					&nbsp;&nbsp;
+					<%=plan.planName%>
+				</a>
+			</td>
+			<td class="text-center"><%=plan.typeName%></td>
+			<%if(plan.planSrvType==1){%>
+			<td class="text-center">单产品</td>
+			<%} else if(plan.planSrvType==2){%>
+			<td class="text-center">政策</td>
+			<%} else if(plan.planSrvType==3){%>
+			<td class="text-center">规则</td>
+			<%} else{%>
+			<td class="text-center"><%=plan.planSrvType%></td>
+			<%}%>
+			<%if(plan.chnlScore == '0'){%>
+				<td class="text-center"></td>
+			<%}else{%>
+				<td class="text-center"><%=plan.chnlScore%></td>
+			<%}%>
+            <%if(plan.smsScore == '0'){%>
+				<td class="text-center"></td>
+            <%}else{%>
+				<td class="text-center"><%=plan.smsScore%></td>
+            <%}%>
+			<td class="text-center"><%=plan.isUsed%></td>
+			<td class="text-center" >
+				<button type="button" class="btn-a btn-a-blue" style="width:54px;height:24px;">确定</button>
+			</td>
+		</tr>
+	<%}%>
+<%}%>

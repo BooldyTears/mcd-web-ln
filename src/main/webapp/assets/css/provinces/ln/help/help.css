@@ -1,0 +1,45 @@
+.help {
+  width: 1256px;
+  height: 680px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid #d3d3d3;
+  background: url(../../../../images/help/bg.png) no-repeat center;
+}
+.dl {
+  width: 200px;
+  height: 200px;
+  margin:120px auto 76px auto;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  background: url(../../../../images/help/download.png) no-repeat center;
+}
+.manual_dl {
+  width: 245px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  background: url(../../../../images/help/manual.png) no-repeat center;
+  cursor:pointer;
+  display:inline-block;
+  margin:0 0 0 372px;
+}
+.ie11_dl {
+  width: 245px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  background: url(../../../../images/help/ie11.png) no-repeat center;
+  cursor:pointer;
+  display:inline-block;
+  margin:0 0 0 20px;
+  
+}
+
+.container{
+	margin-top:20px;
+}

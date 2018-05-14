@@ -1,0 +1,19 @@
+
+	<%for(var i = 0;i<result.length;i++){
+	%>
+		<tr class="content-table-tr <%if(i%2==1){%>odd<%}else{%>even<%}%>"> 
+			<td><input type="checkbox" class="checkbox_row1" name="batchRemove" value="<%=result[i].PRODUCT_NO%>,<%=result[i].USER_TYPE_ID%>,<%=result[i].AVOID_BOTHER_TYPE%>" /></td>
+			<td><%=result[i].PRODUCT_NO%></td>
+			<td><%=result[i].USER_TYPE_NAME%></td>
+			<td><%=result[i].CHANNEL_NAME%></td>
+			<!-- <td><%=result[i].CAMPSEG_TYPE_NAME%></td> -->
+			<td><%=result[i].CREATE_USER_NAME%></td>
+			<td><%=result[i].ENTER_TIME%></td>
+			<td>
+				<a href="javascript:void(0)" class="icon_del rMargin10" title="删除" productNo="<%=result[i].PRODUCT_NO%>" userType="<%=result[i].USER_TYPE_ID%>" channelType="<%=result[i].AVOID_BOTHER_TYPE%>" campSegType="<%=result[i].AVOID_CUST_TYPE%>")"></a>
+           	   	<a href="javascript:void(0)" class="icon_edit"  title="修改" productNo="<%=result[i].PRODUCT_NO%>" userType="<%=result[i].USER_TYPE_ID%>" channelType="<%=result[i].AVOID_BOTHER_TYPE%>" campSegType="<%=result[i].AVOID_CUST_TYPE%>")"></a>
+			</td>
+		</tr>
+	<%}%>
+
+

@@ -1,0 +1,147 @@
+/*江西公共样式../../../images*/
+body,.ui-widget{font-family:"microsoft yahei","Helvetica Neue", Helvetica, Arial, sans-serif,"宋体";}
+label{font-weight: normal;}
+.w-1200{width: 1200px;margin:0 auto;}
+*{word-break: break-all;}
+.dropdown-menu{border-radius: 0;box-shadow: none;}
+.col-xs-2,.col-xs-4{text-align:right;}
+/*搜索输入框*/
+.search-box-wrp{padding:15px 0 15px 1px;}
+/* .search-box-wrp-product{padding-left:1px;} */
+.search-box-wrp.fright{padding:0;}
+.search-box{width: 287px;height: 30px;overflow: hidden;margin: 0 0 0 15px; background: #fff;}
+.search-box input{width: 225px;height: 30px; border: 1px solid #e3e3e3; position: relative;font-size: 12px;  line-height: 30px;  padding: 0 0 0 5px;}
+.search-box i{cursor: pointer; width: 62px;height: 30px;background: #278bdd url(../../../images/imcd-bg.png) no-repeat 6px -75px;}
+/*关于边线*/
+.border-item{display: inline-block; padding:4px 6px; cursor: pointer; border:1px solid #efefef; margin:0 5px 5px 0;}
+.border-item:hover,.border-item.active{border:1px dashed #003EFF;}
+.form-control,.btn{border-radius: 0;}
+/*关于tab切换*/
+.nav-tab-edit{margin-bottom: 15px;}
+.nav-tab-edit.nav-pills > li.active > a, .nav-tab-edit.nav-pills > li.active > a:hover, .nav-tab-edit.nav-pills > li.active > a:focus{
+	color: #333;
+	background: #fff;
+}
+.nav-tab-edit.nav-pills > li > a{
+	border-radius: 0;
+	border:1px solid #dddedf;
+	background: #f1f3f4;
+}
+.nav-tab-edit.nav-pills > li + li{
+	margin-left: 0;
+}
+/*关于按钮*/
+.btn-wrp{height:60px;}
+.btn-wrp a{margin-top:15px;}
+.btn-wrp0 a{margin-top:10px;}
+.btn-a{text-align: center;display: inline-block;}
+.btn-a:hover,.btn-a:link,.btn-a:active{text-decoration: none;}
+.btn-a.btn-a-blue{background: #ff9314; color: #fff;border:1px solid #ff9314;}
+.btn-a.btn-a-white{background: #fff;border:1px solid #278cde; color: #278cde;}
+.btn100-30{ width: 100px; height:30px;line-height: 30px;}
+.btn100-30:hover,.btn100-30:active,.btn100-30:link,.btn140-40:hover,.btn140-40:link,.btn140-40:active{color: #fff;text-decoration:none;}
+.btn140-40{color: #fff;display: inline-block; width: 140px; height:40px;line-height: 40px;text-align: center;background: #ff9314;}
+.btn-wrp a.btn140-40{margin-top:10px;}
+.btn60-26{width: 60px; height:26px;line-height: 26px;font-size: 12px;}
+.btn-group-ft12{margin:0 24px 0 0;}
+.btn-group-ft12 .btn{font-size: 12px; border-radius: 0;border-color:#278bdd; background-color: #fff;}
+.btn-group-ft12 .btn.active,.btn-group-ft12 .btn:hover{background-color: #278bdd;color:#fff;box-shadow: none;}
+.btn-default-new{padding:14px;}
+.input-group-box .form-control{padding:0 10px; height:28px;width:60px;font-size: 12px;}
+.input-group-box .dropdown-toggle{background: #fff;height:28px;border-color: #ccc;padding:6px;}
+.input-group-box .btn-default:focus, .input-group-box .btn-default.focus{background: #fff;}
+.btn-now{width: 107px;cursor: pointer; display: inline-block; height:35px;color: #fff;font-size: 14px; text-align: center; line-height: 35px;background:#fff url(../../../images/put-img.png) no-repeat -4px -357px;}
+/*上一页 下一页*/
+.new-pager-box{height:40px;margin-top:10px;}
+.new-pager-box > div{float: right;}
+.new-pager-box .input-group-box{width:50px;float:left; margin-right:10px;}
+.new-pager-box .input-group-box .form-control{width:40px;}
+.new-pager-box .pager-btn .btn{height:28px; line-height: 13px; font-size: 14px;border-color:#ccc;}
+.new-pager-box .pager-btn .btn-group-ft12{margin: 0;}
+/*checckbox和radio*/
+.cbx-radio-label{font-size: 12px;cursor: pointer;}
+.cbx-radio-label input[type="checkbox"]{position: relative; top:3px; margin-right:3px;}
+.cbx-radio-label input[type="radio"]{position: relative; top:2px; margin-right:3px;}
+/*ul*/
+.public-border-ul li{cursor: pointer;border: 1px solid #e3e3e3;position:relative;float: left;}
+.public-border-ul li.active,.public-border-ul li.active:hover{border-color:#ffa100;border-style: solid;}
+.public-border-ul li:hover{border:1px dashed #278bdd;}
+/*关于分页*/
+.content-table-page {width: 100%;height: 66px;overflow: hidden;}
+.content-table-page .centent-page-box {width: auto;height: 32px;overflow: hidden;margin: 15px 20px 15px 0;}
+.content-table-page .centent-page-box .page-button,.ui-page-button{
+  width: 66px;
+  height: 22px;
+  margin: 3px 10px 0 0;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #333;
+  border: 1px solid #e8ebec;
+  background: #fff;
+}
+.content-table-page .centent-page-box .page-button:hover {
+  border: 1px solid #278bdd;
+  background: #fff;
+}
+.content-table-page .centent-page-box .page-button.disabled {
+  border: 1px solid #e8ebec;
+  background: #fff;
+  text-align: center;
+  font-size: 12px;
+  cursor: auto;
+  color: #999;
+  line-height: 22px;
+}
+.content-table-page .centent-page-box .page-num {
+  width: auto;
+  height: 22px;
+  margin: 3px 6px 0 0;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #000;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 0 5px;
+}
+ .content-table-page .centent-page-box .page-num.active,
+ .content-table-page .centent-page-box .page-num:hover {
+  width: auto;
+  height: 22px;
+  margin: 3px 6px 0 0;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 22px;
+  border: none;
+  background: #278bdd;
+  padding: 0 5px;
+}
+ .content-table-page .centent-page-box .ui-page-num{
+ 	width:40px;
+ 	margin:3px 10px 0 0;
+ 	border:1px solid #e8ebec;
+ 	height:22px;
+ 	line-height: 22px;
+ 	line-height:22px\9;
+ 	font-size: 12px;
+ }
+/*选政策等 左右布局*/
+.step-title{border-bottom: 3px solid #008fca; padding:10px 0;}
+.select-item-wrp{padding:10px 0 20px 0;}
+.item-box{overflow: hidden;margin-bottom: 10px;}
+.item-box .select-left{padding-left: 18px; width:80px;line-height: 22px;}
+.item-box .select-right{width: 90%;}
+hr{margin:0 0 10px 0 !important;}
+.item-box .select-right span{cursor: pointer;padding:3px; margin:0 20px 10px 0; display: inline-block;}
+.item-box .select-right span:hover,.item-box .select-right span.active{color: #fff; background: #82a0c8;}
+.disable-href{
+    background:rgb(204,204,204) !important;
+    width:100px;
+    border:none !important;
+}
+.red-border{
+	border: 1px solid red !important;
+}

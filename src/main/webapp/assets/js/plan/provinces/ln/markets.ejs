@@ -1,0 +1,38 @@
+<div role="tabpanel" id="channel-<%=planChannelMarketTermsBO.channelId%>" class="tab-pane active">
+	<div class="camp-page-box-wrp">
+		<div class="camp-page-box fright">
+			<i class="page-item page-item-left hand J_prevPage" title="上一页"><span class="caret-own caret-own-left"></span></i>
+			<i class="page-item page-item-center hand J_pageSelect">
+				<b class="J_activePage"><%=planChannelMarketTermsBO.pageNum%></b>/<i class="J_totalPage"><%=planChannelMarketTermsBO.totalPage%></i><span class="caret-own"></span>
+				<ol class="page-item-sel" style="display: none">
+				<%
+					for(var j = 1;j <= planChannelMarketTermsBO.totalPage;j++){
+				%>
+					<li><b><%=j%></b>/<%=planChannelMarketTermsBO.totalPage%></li>
+				<%
+					}
+				%>
+				</ol>
+			</i>
+			<i class="page-item page-item-right hand J_nextPage" title="下一页"><span class="caret-own caret-own-right"></span></i>
+		</div>
+	</div>
+	<div class="camp-word-div-wrp clear-both">
+	<%
+		var marketContext = "";
+		var mcdMarketTermsTemplateList = planChannelMarketTermsBO.mcdMarketTermsTemplateList;
+		if(mcdMarketTermsTemplateList != null && mcdMarketTermsTemplateList.length > 0){
+			for(var j = 0;j < mcdMarketTermsTemplateList.length;j++){//只显示推荐语字段有值的记录
+	%>
+		<div class="camp-word-div">
+			<span class="num-left"><%=(j + 1)%></span>
+			<div class="camp-word text-overflow" title="<%=planChannelMarketTermsBO.mcdMarketTermsTemplateList[j].content%>">
+				<%=mcdMarketTermsTemplateList[j].content%>
+			</div>
+		</div>
+	<%
+			}
+		}
+	%>
+	</div>
+</div>

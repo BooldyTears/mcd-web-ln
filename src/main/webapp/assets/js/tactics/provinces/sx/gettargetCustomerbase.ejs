@@ -1,0 +1,66 @@
+<div class="content-table-message J_click" style="cursor:default">
+	<i class="border-active hidden"></i>
+	<span title="<%=data.custom_group_name%>">
+		客户群名称：<%=data.custom_group_name.length>30?data.custom_group_name.substring(0,30)+'...':data.custom_group_name%>
+	</span>
+	
+	<span stylr="float:right">
+		<span>
+			客户群周期：<%=data.update_cycle%>
+		</span>
+		
+		<span>
+			客户群描述：<span title="<%=data.custom_group_desc%>" style="text-overflow:ellipsis;width:200px;overflow:hidden;display:inline-block;white-space: nowrap;line-height: 12px;"><%=data.custom_group_desc%></span>
+		</span>
+		<i class="fright customer-num-box">
+			<em>客户群编码：<%=data.custom_group_id%></em>
+		</i>
+	</span>
+</div>
+<div class="content-customer-detail J_detail hidden">
+	<div class="content-customer-detail-inner">
+		<div class="customer-attribute">
+			<span>创建日期：<%=data.create_time%></span>
+			<span><%=data.create_user_id%></span>
+			<span>文件导入</span>
+		</div>
+		<div class="customer-description">
+			<p>规则:<%=data.rule_desc%></p>
+			<p>数据日期：<%=data.max_data_time%></p>
+		</div>
+	</div>
+</div>
+<table class="content-table-box content-table-list">
+	<tr>
+		<th class="content-table-th" style="width:33.3%">渠道名称</th>
+		<th class="content-table-th" style="width:33.3%">客户群规模</th>
+		<th class="content-table-th" style="width:33.3%">客户群数据日期</th>
+	</tr>
+	 <%
+	   var  mtlChannelDefsArr = unique(data.mtlChannelDefs);
+	    function unique(list){
+		  var arr = [];
+		  for(var i = 0; i < list.length; i++){
+		  if(i == 0) arr.push(list[i]);
+		  b = false;
+		  if(arr.length > 0 && i > 0){
+  		   for(var j = 0; j < arr.length; j++){
+          if(arr[j].CHANNEL_NAME == list[i].CHANNEL_NAME){
+            b = true;
+            continue;
+          }
+     	}
+  	    if(!b){ arr.push(list[i]);}
+	   }
+	  }
+	   return arr;
+		}
+	 %>
+	<%for(var i in mtlChannelDefsArr){%>
+		<tr>
+			<td class="content-table-td"><%=mtlChannelDefsArr[i].CHANNEL_NAME%></td>
+			<td class="content-table-td"><%=mtlChannelDefsArr[i].custgroup_number%></td>
+			<td class="content-table-td"><%=data.max_data_time%></td>
+		</tr>
+	<%}%>
+</table>

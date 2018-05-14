@@ -1,0 +1,50 @@
+<table class="content-table clkBlock-table">
+	<tr>
+		<th style="width:5%">序号</th>
+		<th style="width:30%">产品名称</th>
+		<th style="width:30%">客户群</th>
+		<th style="width:10%">最新客户群规模</th>
+		<th style="width:15%">执行渠道</th>
+		<th style="width:10%">优先级</th>
+	</tr>
+	<%for(var i = 0;i<data.length;i++){%>
+	<tr>
+		<td rowspan="<%=data[i].mtlChannelDefs.length%>" class="hasBG"><%=i+1%></td>
+		<td rowspan="<%=data[i].mtlChannelDefs.length%>"><%=data[i].planName%></td>
+		<td rowspan="<%=data[i].mtlChannelDefs.length%>"><div style="position:absolute;width:33%;margin-top:-10px" class="overflowEllipsis" title='<%=data[i].ruleDesc%>' ><%=data[i].ruleDesc%></div></td>
+		<td rowspan="<%=data[i].mtlChannelDefs.length%>"><%=data[i].originalCustGroupNum%></td>
+		<!--去除重复展示的信息-->
+	 <%
+	   var  mtlChannelDefsArr = unique(data[i].mtlChannelDefs);
+	    function unique(list){
+		  var arr = [];
+		  for(var i = 0; i < list.length; i++){
+		  if(i == 0) arr.push(list[i]);
+		  b = false;
+		  if(arr.length > 0 && i > 0){
+  		  for(var j = 0; j < arr.length; j++){
+          if(arr[j].CHANNEL_NAME == list[i].CHANNEL_NAME){
+           b = true;
+           continue;
+        }
+    	}
+  	   if(!b){ arr.push(list[i]);}
+	 }
+	}
+	 return arr;
+		}
+	 %>		
+		<%for(var j in mtlChannelDefsArr){%>
+			<%if(j==0){%>
+				<td><%=mtlChannelDefsArr[j].CHANNEL_NAME%></td>
+				<td><%=mtlChannelDefsArr[j].PRI_ORDER_NUM%></td>
+			</tr>
+			<%}else{%>
+			<tr>
+				<td><%=mtlChannelDefsArr[j].CHANNEL_NAME%></td>
+				<td><%=mtlChannelDefsArr[j].PRI_ORDER_NUM%></td>
+			</tr>
+			<%}%>
+		<%}%>
+	<%}%>
+</table>

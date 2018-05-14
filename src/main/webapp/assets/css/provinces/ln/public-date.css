@@ -1,0 +1,132 @@
+/*****
+date format CSS
+*/
+.ui-datepicker-box.ui-datepicker {
+	padding: 0;
+}
+
+.ui-datepicker-box.ui-widget.ui-widget-content {
+	border-color: #9fcafc;
+}
+
+.ui-datepicker-box>div>.ui-widget-header {
+	background: #9fcafc;
+	border-color: #9fcafc;
+	color: #fff;
+	font-weight: 400;
+}
+
+.ui-datepicker-box>.ui-datepicker-group-first {
+	border-right: 1px solid #9fcafc;
+}
+
+.ui-datepicker-box  .ui-datepicker-calendar  th {
+	background: #f5f9fd;
+	color: #666;
+	font-weight: 400;
+}
+
+.ui-datepicker-box  .ui-datepicker-calendar  td>a {
+	border: 0px;
+	color: #666;
+	background: #fff;
+	text-align: center;
+	padding: 5px;
+}
+
+.ui-datepicker-box  .ui-datepicker-calendar  td>span {
+	border: 0px;
+}
+
+.ui-datepicker-box  .ui-datepicker-calendar  td>a.ui-state-active {
+	border: 2px solid #9fcafc;
+	border-radius: 24px;
+}
+
+.ui-datepicker-box  .ui-datepicker-calendar  td>a.ui-state-hover {
+	color: #f90;
+}
+
+.ui-datepicker-box  .ui-datepicker-calendar  td>a.ui-state-highlight {
+	border: 2px solid #dad55e;
+	border-radius: 24px;
+}
+
+.ui-datepicker-box.ui-datepicker-multi .ui-datepicker-group table {
+	width: 100%;
+}
+
+.ui-datepicker-box.ui-datepicker .ui-datepicker-prev, .ui-datepicker-box.ui-datepicker .ui-datepicker-next
+	{
+	border: 0px;
+	background: #9fcafc;
+}
+
+.ui-datepicker-box.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+	top: 2px;
+}
+
+.ui-datepicker-box.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+	top: 2px;
+}
+
+.ui-datepicker-box.ui-datepicker .ui-datepicker-prev>.ui-icon {
+	background: #9fcafc url("../../../images/owl-index.png") no-repeat
+		-337px -170px;
+}
+
+.ui-datepicker-box.ui-datepicker .ui-datepicker-next>.ui-icon {
+	background: #9fcafc url("../../../images/owl-index.png") no-repeat
+		-586px -170px;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+	color: #222;
+}
+
+.form-group-new input {
+	width: 94%;
+}
+
+.form-group-new span.color-999 {
+	position: relative;
+	left: -20px;
+	top: 5px;
+}
+/*time*/
+.ui-timepicker-div .ui-widget-header {
+	margin-bottom: 8px;
+}
+
+.ui-timepicker-div dl {
+	text-align: left;
+}
+
+.ui-timepicker-div dl dt {
+	height: 25px;
+	margin-bottom: -25px;
+	font-size: 12px;
+	font-weight: normal;
+	padding-left: 10px;
+}
+
+.ui-timepicker-div dl dd {
+	margin: 0 10px 10px 55px;
+}
+
+.ui-timepicker-div td {
+	font-size: 90%;
+}
+
+.ui-tpicker-grid-label {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ui_tpicker_unit_hide {
+	display: none;
+}

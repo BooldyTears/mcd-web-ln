@@ -1,0 +1,42 @@
+<div class="content-table over-hidden">
+			
+			<div class="content-table-box" id="priorityCampsegList">
+				<table class="content-table" style="border:0px;table-layout: fixed; width:1140px">
+					<tbody id="priorityCampsegListTbody">
+						<tr>
+							<th class="content-table-th" style="width: 25%">策略编号</th>
+							<th class="content-table-th" style="width: 30%">策略名称</th>
+							<th class="content-table-th" style="width: 10%">客户群规模</th>
+							<th class="content-table-th" style="width: 10%">成功率</th>
+							<th class="content-table-th" style="width: 10%">优先级</th>
+							<th class="content-table-th" style="width: 15%">操作</th>
+						</tr>
+						<%
+							for (var i = 0; i < data.length; i++) {
+						%>
+						<tr class="bulk-list-content ui-sortable-handle" task_id="<%=data[i].taskId%>" campseg_id="<%=data[i].campsegId%>" channel_id="<%=data[i].channelId%>" adiv_id="<%=data[i].adivId%>" priority="<%=data[i].priority%>">
+							<td class="content-table-td" style="width: 25%">
+							<%
+								if (data[i].manual == 0) {
+							%>
+									<span class="effectContainer-addIcon-tr" />
+							<%
+								}
+							%>
+							<%=data[i].campsegPid%></td>
+							<td class="content-table-td" style="width: 30%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" title="<%=data[i].campsegName%>"><%=data[i].campsegName%></td>
+							<td class="content-table-td" style="width: 10%; color: #FFBB66"><%=data[i].custgroupNum%></td>
+							<td class="content-table-td" style="width: 10%"><%=data[i].successRate%></td>
+							<td class="content-table-td" style="width: 10%"><%=data[i].priority%></td>
+							<td class="content-table-td" style="width: 15%">
+								<img campseg_id="<%=data[i].campsegId%>" channel_id="<%=data[i].channelId%>" adiv_id="<%=data[i].adivId%>" title="置顶" class="stick_on_top" src="<%=_ctx%>/assets/images/cep/top-priority.png" style="cursor:pointer;" onclick="top_campseg(this);" />
+								<img task_id="<%=data[i].taskId%>" campseg_id="<%=data[i].campsegId%>" channel_id="<%=data[i].channelId%>" adiv_id="<%=data[i].adivId%>" class="stick_on_stop_task" title="终止" src="<%=_ctx%>/assets/images/cep/task-stop.png" style="cursor:pointer;" onclick="stop_task(this);"/>
+							</td>
+						</tr>
+						<%
+							}
+						%>
+					</tbody>
+				</table>
+				
+		</div>

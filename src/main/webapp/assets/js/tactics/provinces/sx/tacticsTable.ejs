@@ -1,0 +1,92 @@
+<table class="content-table">
+	<tr>
+		<th class="content-table-th text-right-th" style="width:8%;">序号</th>
+		<th class="content-table-th">策略编号及名称</th>
+		<th class="content-table-th">执行周期</th>
+		<th class="content-table-th">地市</th>
+		<th class="content-table-th">状态</th>
+
+		<th class="content-table-th text-left" style="padding-left:30px;">操作</th>
+	
+	</tr>
+
+	<%for(var i = 0;i<data.result.length;i++){
+	   data.result[i].DQ_D_2_NAME="距离营销策略开始日期";
+	   if(parseInt(data.result[i].DQ_D_2)<=0){
+	   	 data.result[i].DQ_D_2=Math.abs(parseInt(data.result[i].DQ_D_2));
+	   	 data.result[i].DQ_D_2_NAME="已超期";
+	   }
+	   //如果任务状态为30 则策略状态为 数据准备中
+	   if(data.result[i].taskStatusId=="30"){
+	   	  data.result[i].campsegStatName="数据准备中";
+	   }
+	%>
+		<tr class="content-table-tr <%if(i%2==1){%>odd<%}else{%>even<%}%>">
+			<td class="content-table-td">
+                <%if(data.result[i].hasError){%>
+                    <span  class="tdImg-box" style="margin-right: 5px"><img width="15px" height="15px" src="../../assets/images/error.png"/></span>
+                <%}%>
+			  <%if(data.result[i].DQ_1=='1'){%>
+					<span  class="tdImg-box" value="<%=data.result[i].DQ_D_1%>"><img src="../../assets/images/dqcl.png"   alt="【策略到期提醒】距离营销策略到期日期<%=data.result[i].DQ_D_1%>天" title="【策略到期提醒】距离营销策略到期日期<%=data.result[i].DQ_D_1%>天"/></span>
+	            <%}%>
+	            <%if(data.result[i].DQ_2=='1') {%>
+			        <span  class="tdImg-box" value="<%=data.result[i].DQ_D_2%>"> <img src="../../assets/images/dqsp.png" alt="【审批到期提醒】<%=data.result[i].DQ_D_2_NAME%><%=data.result[i].DQ_D_2%>天" title="【审批到期提醒】<%=data.result[i].DQ_D_2_NAME%><%=data.result[i].DQ_D_2%>天" /></span>
+			    <%}%>
+			    <%if(data.result[i].DQ_3=='1') {%>
+					  <span  class="tdImg-box" value="<%=data.result[i].DQ_D_3%>"><img src="../../assets/images/dqzc.png" alt="【政策到期提醒】距离营销政策到期日期<%=data.result[i].DQ_D_3%>天"  title="【政策到期提醒】距离营销政策到期日期<%=data.result[i].DQ_D_3%>天"/></span>
+				 <%}%>
+				 <span class="tdImg-box-no"><%=i+1%></span>
+			 </td>
+			<td class="content-table-td">
+				<a href="<%="tacticsInfo.jsp?campsegId="+data.result[i].campsegId%>" target="_blank" style="white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:350px;display: block;" title="<%=data.result[i].CAMPSEGPID%>&nbsp;<%=data.result[i].campsegName%>">
+					<%=data.result[i].campsegId%>&nbsp;<%=data.result[i].campsegName%>
+				</a>
+			</td>
+			<td class="content-table-td align_center tactics_manager_act_cycle" campsegId="<%=data.result[i].campsegId%>" invalidFlag="<%=data.result[i].invalidFlag%>"  endDate="<%=data.result[i].endDate%>"><%=data.result[i].startDate%>到<%=data.result[i].endDate%></td>
+			<td class="content-table-td"><%=data.result[i].cityName%></td>
+			<td class="content-table-td <%=data.result[i].campsegStatName=='暂停'||data.result[i].campsegStatName=='终止' ?'more_tips':''%>" pauseComment="<%=data.result[i].pauseComment%>" style="overflow: visible;"><%=data.result[i].campsegStatName%></td>
+			
+			<td class="content-table-td align_center J_manageTd">
+				<%
+					  var onlyCpoyArr = ["91","90","59","54","50","40","48","49"];
+					  var statusId = data.result[i].campsegStatId+"";
+					  data.result[i].manageBtnDisplay="visible";
+					  if($.inArray(statusId, onlyCpoyArr) != -1){
+					    if((data.result[i].DQ_2+"")!="1")
+						{
+						    data.result[i].manageBtnDisplay="hidden";
+						}
+					  }
+					  if(data.result[i].taskStatusId=="30"){
+					  	data.result[i].manageBtnDisplay="hidden";
+					  }
+					%>
+				<div class="controls manage J_manageBtn <%=data.result[i].manageBtnDisplay%>" style="visibility:<%=data.result[i].manageBtnDisplay%>" isMy="<%=data.result[i].isMy%>" statusId="<%=data.result[i].campsegStatId%>" campsegId="<%=data.result[i].campsegId%>" DQ_2="<%=data.result[i].DQ_2%>" >
+					<span class="txt J_manageBtn"  isMy="<%=data.result[i].isMy%>" statusId="<%=data.result[i].campsegStatId%>" campsegId="<%=data.result[i].campsegId%>" DQ_2="<%=data.result[i].DQ_2%>" >管理</span>
+					<div class="icon J_manageBtn" isMy="<%=data.result[i].isMy%>" statusId="<%=data.result[i].campsegStatId%>" invalidFlag="<%=data.result[i].invalidFlag%>" campsegId="<%=data.result[i].campsegId%>" DQ_2="<%=data.result[i].DQ_2%>" >
+						<span class="icon_arrDown J_manageBtn" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>" DQ_2="<%=data.result[i].DQ_2%>" ></span>
+					</div>
+				</div>
+				<div class="controls manage J_activityBtn" <%=(data.result[i].campsegStatId == 20 || data.result[i].campsegStatId == 90|| data.result[i].campsegStatId == 91|| data.result[i].campsegStatId == 41|| data.result[i].campsegStatId == 48||data.result[i].taskStatusId==30) ?  'style="display:none;"': ''%> isMy="<%=data.result[i].isMy%>" statusId="<%=data.result[i].campsegStatId%>" campsegId="<%=data.result[i].campsegId%>">
+					<span class="txt J_activityBtn"  isMy="<%=data.result[i].isMy%>" statusId="<%=data.result[i].campsegStatId%>" campsegId="<%=data.result[i].campsegId%>">活动管控</span>
+					<div class="icon J_activityBtn" isMy="<%=data.result[i].isMy%>" statusId="<%=data.result[i].campsegStatId%>" campsegId="<%=data.result[i].campsegId%>">
+						<span class="icon_arrDown J_activityBtn" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>"></span>
+					</div>
+				</div>
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan="6" class="nopadding no-cursor">
+				<div class="tableOuter">
+
+				</div>
+			</td>
+		</tr>
+	<%}%>
+</table>
+<div class="content-table-page">
+	<div id="tacticsManagerPage" class="fright clearfix centent-page-box">
+	</div>
+</div>
+

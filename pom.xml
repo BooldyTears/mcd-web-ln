@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.asiainfo.biapp.mcd</groupId>
+  <artifactId>mcd-web-ln</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>mcd-web-ln</name>
+
+  <properties>
+    <testordev>dev-</testordev>
+    <popScope>compile</popScope>
+    <mcd-web.version>4.2.1</mcd-web.version>
+    <mcd-iop.version>4.2.1</mcd-iop.version>
+    <mcd-pop.version>4.2.1</mcd-pop.version>
+    <mcd-iop-ws.version>4.2.1</mcd-iop-ws.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+
+    <!-- MCD-WEB -->
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-web</artifactId>
+      <version>${mcd-web.version}</version>
+      <type>jar</type>
+      <classifier>${testordev}ln</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-web</artifactId>
+      <version>${mcd-web.version}</version>
+      <type>war</type>
+      <classifier>${testordev}ln</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-iop</artifactId>
+      <version>${mcd-iop.version}</version>
+      <type>jar</type>
+      <classifier>api</classifier>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-iop</artifactId>
+      <version>${mcd-iop.version}</version>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-iop-ws</artifactId>
+      <version>${mcd-iop-ws.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-pop</artifactId>
+      <version>${mcd-pop.version}</version>
+      <type>jar</type>
+      <classifier>api</classifier>
+      <exclusions>
+        <exclusion>
+          <artifactId>*</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-pop</artifactId>
+      <version>${mcd-pop.version}</version>
+      <type>war</type>
+    </dependency>
+
+    <dependency>
+      <groupId>com.asiainfo.biapp.mcd</groupId>
+      <artifactId>mcd-sms-api</artifactId>
+      <version>4.1.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+
+
+  </dependencies>
+  <build>
+    <finalName>mcd-web-ln</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>UTF-8</encoding>
+          <fork>true</fork>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>3.2.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <env>dev</env>
+        <testordev>dev-</testordev>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>test</id>
+      <properties>
+        <env>test</env>
+        <testordev>test-</testordev>
+      </properties>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>qa</id>
+      <properties>
+        <env>qa</env>
+      </properties>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+    </profile>
+  </profiles>
+</project>

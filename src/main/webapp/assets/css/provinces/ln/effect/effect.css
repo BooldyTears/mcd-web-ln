@@ -1,0 +1,252 @@
+.width110{width:110px;}
+.width180{width:180px;}
+.selwidth755{width:350px;}
+.icon_arrow{
+   position: relative;
+   top:1px;
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   background: #fff url(../../../../images/drop_arrow.png) no-repeat center center;
+}
+ 
+.effect-title-box{
+   height: 30px;
+   margin:25px 0px 20px;
+}
+.effect-title-box > h3{
+  margin:0px;
+  color: #2b2929;
+}
+.effect-query-box{}
+.effect-query-box > dd{
+	display: inline-block;
+	float: left;
+	height: 28px;
+  line-height: 28px;
+  padding:0px 5px;
+}
+
+.button{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  width: 60px;
+}
+.button.button-small{
+  padding:3px 12px;
+}
+.button-blue{
+	background-color:#468ad7;
+	color:#fff;
+}
+
+.effect-query-box .input-group{
+  height: 26px;
+  line-height: 26px;
+  border:1px solid #eee;
+  background-color: #fff;
+}
+.effect-query-box .input-group:hover{
+   border:1px solid #bdddfd;
+}
+.effect-query-box .input-group input , .effect-query-box .input-group  .input-group-btn:last-child > .btn{
+  border:none;
+}
+.effect-query-box .form-control{
+    height: 26px;
+    padding: 0px 12px;
+    font-size: 12px;
+    line-height: 26px;
+}
+.effect-query-box .btn{
+  padding:0px;
+}
+.effect-query-box .dropdown-menu{
+  margin:0px ;
+  border:1px solid #bdddfd;
+  min-width:110px;
+  right:-1px;
+}
+.effect-query-box .dropdown-menu > li > a , .effect-query-box .dropdown-menu > li{
+  font-size: 12px;
+}
+.effect-query-box .dropdown-menu > li{
+  padding:0 5px;
+  cursor:pointer;
+}
+.effect-query-box .dropdown-menu > li:nth-child(even){
+	background:#fafafa;
+}
+.effect-query-box .dropdown-menu > li:hover{
+	background:#bdddfd;
+}
+.itemBtnBox button{
+   height: 20px;
+   line-height: 20px;
+   padding: 0px 10px;
+   margin-left: 10px;
+}
+.effect-query-box .input-group-btn.open > .dropdown-toggle.btn-default:hover,
+.effect-query-box .input-group-btn.open > .btn-default:active, .btn-default.active, 
+.effect-query-box .input-group-btn.open > .dropdown-toggle.btn-default ,
+.effect-query-box  .btn-default:hover{
+	background:none;
+}
+
+
+
+.effect-body{
+  border: 1px solid #e3e3e3;
+  border-top: 2px solid #b4cfec;
+  padding-bottom: 25px;
+  background: #fff;
+}
+
+.effect-table-box{clear:both;}
+.effect-table-box table{
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  table-layout: fixed;
+}
+.effect-table-box table > thead> tr > th {
+  border: 1px solid #dde7f1;
+  background: #fafcff;
+  text-align: center;
+  height: 40px;
+  font-size: 14px;
+  color: #000;
+}
+.effect-table-box table > tbody> tr > td {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    border: 1px solid #efefef;
+    background: #fff;
+    text-indent: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 36px;
+}
+
+.effect-table-box table > tbody> tr:nth-child(even) td {
+    background-color: #fafafa;
+}
+.effect-table-box table > thead> tr > th:last-child ,.effect-table-box table > tbody> tr > td:last-child{
+	border-right:none;
+}
+.effect-echart {
+  margin:10px auto 0px;
+}
+.effect-echart  .msmechart{
+  width:100%;
+  height: 420px;
+}
+.comDateInput{
+  display: inline-block;
+  width:100px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 15px 0 5px;
+  background: #fff url(../../../../images/datePicker.gif) no-repeat right;
+  color:#2b2929;
+  border:1px solid #eee;
+  font-size: 12px;
+}
+
+/**  **/
+.ui-multiselect.selectMultiSel{
+	position:relative;
+	padding:0px 25px 0px 4px;
+	background: #fff;
+	height: 26px;
+	line-height:26px;
+	border:1px solid #eee;
+}
+    
+.ui-multiselect-menu.selectMultiSel{
+	border: 1px solid #bdddfd;
+}
+.ui-multiselect-menu.selectMultiSel .ui-multiselect-header{
+	background: #bdddfd;
+	margin-bottom: 0px;
+    padding: 0px 0 0px 5px;
+}
+.ui-multiselect-menu.selectMultiSel .ui-widget-header .ui-helper-reset{
+	float:right;
+	
+}
+.ui-multiselect-menu.selectMultiSel .ui-widget-header .ui-helper-reset > li{
+	height:22px;
+	line-height:22px;
+}
+.ui-multiselect-menu.selectMultiSel .ui-widget-header .ui-helper-reset > li a{
+	color:#666;
+	font-weight:normal;
+}
+.ui-multiselect-menu.selectMultiSel .ui-widget-header .ui-helper-reset li .ui-icon{
+	    margin-top: 2px;
+	    opacity: 0.7;
+}
+.ui-multiselect-menu.selectMultiSel .form-control , 
+.ui-multiselect-menu.selectMultiSel .input-group-addon{
+	padding:0px 12px;
+	height:24px;
+	background:#fff;
+}
+.ui-multiselect-menu.selectMultiSel .input-group-addon button{
+	background:none;
+}
+.selectMultiSel .selArrow{
+   position:absolute;
+   top: 5px;
+   right:0px;
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   background: #fff url(../../../../images/drop_arrow.png) no-repeat center center;
+}
+ 
+.ui-multiselect.selectMultiSel.ui-state-active{
+	border:1px solid #bdddfd;
+} 
+.ui-multiselect.selectMultiSel .selText{
+	display: inline-block;
+	width:320px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap; 
+	color:#333;
+}
+
+.ui-multiselect.selectMultiSelb .ui-multiselect-header{
+	background: #fff;
+}
+.ui-multiselect-menu.selectMultiSel .ui-multiselect-checkboxes li
+.ui-state-hover{
+	border-color:#bdddfd;
+    background: #bdddfd;
+}
+
+.ui-multiselect-menu.selectMultiSel .ui-multiselect-checkboxes li  label{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.echartsCT .units {
+	float:right;
+	color:black;
+	font-weight:bold;
+	padding-right: 25px;
+	padding-bottom: 5px;
+}

@@ -1,0 +1,6 @@
+<%for(var i = 0;i<data.length;i++){%>
+    <%
+        if(data[i].id == 1) continue;
+     %>
+    <option value="<%=data[i].id%>"><%=data[i].name%></option>
+<%}%>

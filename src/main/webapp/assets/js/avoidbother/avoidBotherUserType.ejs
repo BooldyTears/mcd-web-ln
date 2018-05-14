@@ -1,0 +1,14 @@
+<div class="fleft content-type-tite">客户类型：</div>
+<div class="fleft content-type-list">
+	<div class=" content-type-item-inner">
+		<div class="content-type-inner">
+			<%for(var i = 0;i<data.length;i++){%>
+				<%if(i == 0){%>
+					<span class="fleft content-type-box J_campType active" userTypeId="<%=data[i].id%>"><%=data[i].name%></span>
+				<%}else{%>
+					<span class="fleft content-type-box J_campType" userTypeId="<%=data[i].id%>"><%=data[i].name%></span>
+				<%}%>
+			<%}%>
+		</div>
+	</div>
+</div>

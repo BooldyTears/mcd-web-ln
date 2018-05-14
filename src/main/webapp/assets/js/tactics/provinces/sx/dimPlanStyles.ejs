@@ -1,0 +1,6 @@
+<span planSrvType="" class="active">不限</span>
+<%if(data.length > 0){%>
+	<%for(var i=0;i<data.length;i++){%>
+		<span planSrvType="<%=data[i].styleId%>"  ><%=data[i].styleName%></span>
+	<%}%>
+<%}%>

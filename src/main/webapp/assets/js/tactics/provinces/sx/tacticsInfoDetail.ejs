@@ -1,0 +1,29 @@
+<dl>
+	<dt><span class="tactics-info-detail-campname" title="<%=data.campsegName%>"><%=data.campsegName%></span><div class="tactics-info-detail-state">状态：<%=data.statusName%></div></dt>
+	<dd>
+		<table style="table-layout: fixed;width: 100%">
+			<tr>
+				<td id="campsegId" campsegId="<%=data.campsegId%>">策略编码：<%=data.campsegId%></td>
+				<td>执行周期：<%=data.startDate%> 到 <%=data.endDate%></td>
+				<td>创建人：<%=data.createUserName%></td>
+			</tr>
+			<tr>
+				<td id="cdnTd" data-cdn="<%=data.campDrvName%>">产品类别：<%=data.campDrvName.split(",")[0]%></td>
+				<td>创建时间：<%=data.createTime%></td> 
+				<td style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden" title="<%=data.childMtlCampSeginfo['0'].campsegDesc%>">策略描述：<%=data.childMtlCampSeginfo["0"].campsegDesc%></td> 
+			</tr>
+				<% if(data.isOpenTemplate==1){%>
+			<tr>
+				<td >营销模板：<%=data.activityTemplateName%></td>
+				<td></td> 
+				<td></td> 
+			</tr>
+			<%}%>
+		</table>
+	</dd>
+	<dd id="subCampsegIdCT" style="display:none;"> 
+		<%for(var x in data.childMtlCampSeginfo){%>
+			<span><%=data.childMtlCampSeginfo[x].campId%></span>
+		<%}%>
+	</dd>
+</dl>

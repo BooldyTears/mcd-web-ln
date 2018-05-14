@@ -1,0 +1,31 @@
+<table class="content-table J_listTable">
+	<tbody>
+		<tr>
+			<th class="content-table-th" style="width:30%;">规则名称</th>
+			<th class="content-table-th text-left" style="width:20%">渠道</th>
+			<th class="content-table-th text-left" style="width:20%">活动类型</th>
+			<th class="content-table-th text-left" style="width:15%">状态</th>
+			<th class="content-table-th text-left" style="width:15%">操作</th>
+		</tr>
+		 <%for(var i = 0; i < data.data.length; i++){%>
+ 			<%
+    		     var item = data.data[i];
+    		     var startOrEndTxt = item.status == '0' ? "启动" : "停止";
+    		     var startOrEndClassName = item.status == '0' ? "" : "border-btn-red";
+    		 %>
+		<tr class="content-table-tr">
+			<td class="content-table-td" title="<%=item.name%>"><%=item.name%></td>
+			<td class="content-table-td text-left"><%=item.channelName%></td>
+			<td class="content-table-td text-left"><%=item.activityType%></td>
+			<td class="content-table-td text-left"><%=item.statusName%></td>
+			<td class="content-table-td  text-left">
+				<span class="border-btn J_startOrEnd <%=startOrEndClassName%>" data-status="<%=item.status%>" data-id="<%=item.id%>">
+					<%=startOrEndTxt%>
+				</span>
+			</td>
+		</tr>
+		 <%}%>
+		
+	</tbody>
+</table>
+

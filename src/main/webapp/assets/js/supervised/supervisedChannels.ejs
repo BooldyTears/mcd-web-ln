@@ -1,0 +1,12 @@
+<div class="fleft content-type-tite">监控渠道：</div>
+<div class="fleft content-type-list">
+	<div class=" content-type-item-inner">
+		<div class="content-type-inner">
+			<%
+			   for(var i = 0;i<data.length;i++){
+			%>
+			  <span class="fleft content-type-box J_campType" channelId="<%=data[i]['CHANNELID']%>"><%=data[i]['CHANNELNAME']%></span>
+			<%}%>
+		</div>
+	</div>
+</div>

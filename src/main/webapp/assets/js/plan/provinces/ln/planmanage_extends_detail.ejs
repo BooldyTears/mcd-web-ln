@@ -1,0 +1,264 @@
+<!-- 产品详情-查看和修改弹窗 -->
+<%
+	var details = planDetailBO.queryDefExt[0];//详细主体数据对象
+    var planInUse = planDetailBO.planInUse;//判断该产品是否正在被使用
+    var planTypes = planDetailBO.planTypes;//类型数据对象 【数组】
+    var planStatus = planDetailBO.planStatus;//状态数据对象 【数组】
+    var planChannelMarketTerms = planDetailBO.planChannelMarketTermsList;
+    var channels = planDetailBO.channel;//渠道
+    var citys = planDetailBO.city;//适用城市
+    //类型编码
+    var currentTypeId = details.TYPE_ID;
+    var currentOnlineStatus = details.ONLINE_STATUS;
+%>
+<div class="edit-dialog-box container" style="display: none">
+	<div class="own-dialog edit-dialog" id="edit-dialog">
+		<!-- 内容区 -->
+		<form class="form-horizontal ft12">
+			<div class="rows-box">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<input type="hidden" value="<%=planDetailBO.planInUse%>" id="planInUse"/>
+							<label class="col-xs-4 control-label">单产品编码： </label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" id="planId" disabled="disabled" value="<%=details.PLAN_ID%>">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">单产品名称： </label>
+							<div class="col-xs-6">
+								<!--<select  class="form-control"></select>-->
+								<input type="text" class="form-control" disabled="disabled" title="<%=details.PLAN_NAME%>" value="<%=details.PLAN_NAME%>"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">类别：</label>
+							<div class="col-xs-6">
+								<select id="type_name" class="form-control" disabled="disabled">
+								<%
+									if(currentTypeId === ''){
+								%>
+									<option selected="selected" >全部</option
+								<%
+										for(var i = 0;i < planTypes.length;i++){
+								%>
+								<option value="<%=planTypes[i].typeId%>"><%=planTypes[i].typeName%></option>
+								<%	
+										}
+									}else{
+								%>
+										<option disabled >全部</option
+								<%
+										for(var i = 0;i < planTypes.length;i++){
+											var disabledFlag = currentTypeId == planTypes[i].typeId ? "selected='selected'" : "";
+								%>
+								     <option value="<%=planTypes[i].typeId%>" <%=disabledFlag%> ><%=planTypes[i].typeName%></option>
+								<%
+										}
+									}
+								%>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">生效时间： </label>
+							<div class="col-xs-6">
+								<input  class="form-control Wdate Wdate-own-new" type="text" disabled="disabled" value="<%=formatDate(details.PLAN_STARTDATE)%>" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">失效时间： </label>
+							<div class="col-xs-6">
+								<input  class="form-control Wdate Wdate-own-new" type="text" disabled="disabled" value="<%=formatDate(details.PLAN_ENDDATE)%>" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})"/>							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">状态：</label>
+							<div class="col-xs-6">
+								<select id="online_status" class="form-control" disabled="disabled">
+								<%
+									if(currentOnlineStatus === ''){
+										for(var i = 0;i < planStatus.length;i++){
+								%>
+								<option value="<%=planStatus[i].statusId%>"><%=planStatus[i].statusName%></option>
+								<%	
+										}
+									}else{
+										for(var i = 0;i < planStatus.length;i++){
+											var disabledFlag = currentOnlineStatus == planStatus[i].statusId ? "selected='selected'" : "";
+								%>
+								     <option value="<%=planStatus[i].statusId%>" <%=disabledFlag%> ><%=planStatus[i].statusName%></option>
+								<%
+										}
+									}
+								%>	
+								</select>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label"> 适用渠道：</label>
+							<div class="col-xs-6" id="channelSelDiv">
+								<select  class="form-control" id="channelSel" multiple="multiple" disabled="disabled">
+								<%
+									for(var i = 0;i < channels.length;i++){
+								%>
+								    <option value="<%=channels[i].CHANNEL_ID%>"><%=channels[i].CHANNEL_NAME%></option>
+								<%
+									}
+								%>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label"> 适用地市：</label>
+							<div class="col-xs-6" id="citySelDiv">
+								<select class="form-control" id="citySel" multiple="multiple" disabled="disabled">
+								<%
+									for(var i = 0;i < citys.length;i++){
+								%>
+								    <option value="<%=citys[i].CITY_ID%>" disabled ><%=citys[i].CITY_NAME%></option>
+								<%
+									}
+								%>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">产品经理： </label>
+							<div class="col-xs-6">
+								<input type="text" value="<%=details.MANAGER%>" id="manager" title="<%=details.MANAGER%>" disabled="disabled" class="form-control" >
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label"> 直接办理积分：</label>
+							<div class="col-xs-6">
+								<input type="text" value="<%=details.CHNL_SCORE%>" id="chenScore" title="<%=details.CHNL_SCORE%>" disabled="disabled" class="form-control" onkeypress="return event.keyCode>=48&&event.keyCode<=57" maxlength="4">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label"> 短信办理积分：</label>
+							<div class="col-xs-6">
+								<input type="text" value="<%=details.SMS_SCORE%>" id="smsScore" title="<%=details.SMS_SCORE%>" disabled="disabled" class="form-control" onkeypress="return event.keyCode>=48&&event.keyCode<=57" maxlength="4">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="col-xs-2 width-118 control-label">描述： </label>
+							<div class="col-xs-10">
+								<!--<input type="text" class="form-control" value="<%=details.PLAN_DESC%>">-->
+								<textarea class="form-control" disabled="disabled"><%=details.PLAN_DESC%></textarea>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				
+				
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="col-xs-2 width-118 control-label">推荐语： </label>
+							<div class="col-xs-10">
+								<ul class="nav nav-pills ft12 nav-tab-edit mb_0" role="tablist">
+										<%
+											var activeStr = "";
+											for(var i = 0;i < planChannelMarketTerms.length;i++){
+												activeStr = i == 0 ? "class='active'" : "";
+												
+										%>
+										<li role="presentation" <%=activeStr%>>
+											<a href="#channel-<%=planChannelMarketTerms[i].channelId%>" role="tab" data-toggle="tab"><%=planChannelMarketTerms[i].channelName%></a>
+										</li>
+										<%		
+											}
+										%>
+								</ul>
+								<div class="tab-content">
+									<%
+										var mcdMarketTermsTemplateList;
+										var activeStr = '';
+										for(var i = 0;i < planChannelMarketTerms.length;i++){
+											mcdMarketTermsTemplateList = planChannelMarketTerms[i].mcdMarketTermsTemplateList;
+											activeStr = i == 0 ? 'class="tab-pane active "' : 'class="tab-pane "';
+									%>
+										<div role="tabpanel" id="channel-<%=planChannelMarketTerms[i].channelId%>" <%=activeStr%>>
+										<div class="camp-page-box-wrp">
+											<div class="camp-page-box fright">
+												<i class="page-item page-item-left hand J_prevPage" title="上一页"><span class="caret-own caret-own-left"></span></i>
+												<i class="page-item page-item-center hand J_pageSelect">
+													<b class="J_activePage">1</b>/<i class="J_totalPage"><%=planChannelMarketTerms[i].totalPage%></i><span class="caret-own"></span>
+													 <ol class="page-item-sel" style="display: none">
+													 	<%
+													 	for(var j = 1;j <= planChannelMarketTerms[i].totalPage;j++){
+													 	%>
+													 	<li><b><%=j%></b>/<%=planChannelMarketTerms[i].totalPage%></li>
+													 	<%
+													 	}
+													 	%>
+													 </ol>
+												</i>
+												<i class="page-item page-item-right hand J_nextPage" title="下一页"><span class="caret-own caret-own-right"></span></i>
+											</div>
+										</div>
+										<div class="camp-word-div-wrp clear-both">
+											<%
+												var marketContext = "";
+												if(mcdMarketTermsTemplateList != null && mcdMarketTermsTemplateList.length > 0){
+													for(var j = 0;j < mcdMarketTermsTemplateList.length;j++){//只显示推荐语字段有值的记录
+											%>
+											<div class="camp-word-div">
+												<span class="num-left"><%=(j + 1)%></span>
+												<div class="camp-word text-overflow" title="<%=mcdMarketTermsTemplateList[j].content%>"><%=mcdMarketTermsTemplateList[j].content%></div>
+											</div>	
+											<%
+													}
+												}
+											%>
+										</div>
+									</div>
+									<%
+										}
+									%>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				
+				
+			</div><!--rows-box-->
+			<div class="text-center mbot_15">
+				<span id="save-div" style="display: none"><a href="javascript:;" id="save-btn" class="btn-a btn-a-gray-light btn100-30">保存</a></span>
+				<span id="return-div"><a href="javascript:;" id="return-btn" class="btn-a btn-a-gray-light btn100-30">返回</a></span>
+			</div>
+		</form>
+	</div><!--dialog end-->
+</div>

@@ -1,0 +1,189 @@
+.numLink{
+	color:#007FFF;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.operationLogContainer .content {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+/*tab*/
+.myTacticsQuery {
+  width: 1250px;
+  margin: 0 auto;
+}
+.icon_arrDown {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid #656565;
+  vertical-align: middle;
+}
+.icon_arrUp {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom: 5px solid #656565;
+  vertical-align: middle;
+}
+.tacticsManageQueryTab {
+  margin: 0;
+}
+.tacticsManageQueryTab li {
+  position: relative;
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tacticsManageQueryTab li.active {
+  border-bottom: 4px solid #288bde;
+}
+.tacticsManageQueryTab li span.icon_arrUp {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #288bde;
+}
+.tacticsManageQueryTab li.active span.icon_arrUp {
+  display: block;
+}
+.container {
+  width: 1250px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+.container .content .content-main {
+  width: 99.7%;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  border: 1px solid #e8ebec;
+  background: #fff;
+  border-top: 2px solid #b4cfed;
+}
+/*table*/
+.content-table {
+  width: 100%;
+  margin: 10px 0 0 0;
+  background: #fff;
+  table-layout: fixed;
+}
+
+.content-table .content-table-box {
+  margin: 0 15px;
+}
+.content-table .content-table-box .content-table-th {
+  height: 46px;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  line-height: 46px;
+  border: 1px solid #dde7f1;
+  background: #fafcff;
+  border-left: none;
+  border-right: none;
+  font-family: "Microsoft Yahei";
+}
+.content-table .content-table-td {
+  height: 46px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  line-height: 20px;
+  border-bottom: 1px solid #efefef;
+  background: #fff;
+  text-indent: 5px;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.content-table-tr:nth-child(2n+1)  .content-table-td{
+	background: #fafafa;
+}
+.content-table-tr:hover  .content-table-td{
+	background: rgb(220,240,193);
+}
+/*search*/
+.content-type-search {
+  width: 60%;
+  height: 32px;
+  margin: 12px 0 10px;
+}
+.content-type-search-name{
+	float: left;
+	margin:17px 0 0 20px;
+}
+.date-line{
+	color: #9D9D9D;
+}
+.content-type-search-box input {
+  width: 148px;
+  height: 30px;
+  margin: 0;
+  font-size: 12px;
+  color: #000;
+  line-height: 30px;
+  padding: 0 0 0 5px;
+  border: 1px solid #e3e3e3;
+}
+.content-type-search-box .searchBtn {
+  width: 62px;
+  height: 30px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 30px;
+  border: none;
+  background: #278bdd url(../../../../images/imcd-bg.png) no-repeat 6px -75px;
+  margin:0 0 0 30px;
+}
+.content-type-outer-box {
+  padding-bottom: 10px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  border: none;
+  background: #f1f9fb;
+}
+#operationLogTabCT > .box {
+  display: none;
+}
+#operationLogTabCT > .active {
+  display: block;
+}
+.visitTimes-dialog{
+	min-height:100px;
+	max-height: 600px;
+}
+.up-dialog .form-group-own{
+  overflow: hidden;
+  clear: both;
+  margin:0 0 10px 0;
+}
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+<%if(data.length > 0){%>
+	<%for(var i=0;i<data.length;i++){
+		var item=data[i];
+	%>
+	<li  channelId="<%=item.channelId%>" id="li_channelId_<%=item.channelId%>">
+		<span><img class="pics" src="<%=contextPath%>/assets/images/<%=item.channelId%>.png"></span>
+		<span class="type-title"><%=item.channelName%></span>
+		<img class="selected-img" src="<%=contextPath%>/assets/images/channelSelected.png">
+	</li>
+	<%}%>
+<%}%>

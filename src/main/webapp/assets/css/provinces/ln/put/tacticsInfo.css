@@ -1,0 +1,973 @@
+.container {
+  width: 1250px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+.container .left-nav {
+  width: 110px;
+  height: auto;
+  overflow: hidden;
+  margin: 10px auto 0;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  left: -300px;
+}
+.container .left-nav .left-nav-box {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  font-size: 14px;
+  cursor: auto;
+  color: #ccc;
+  line-height: 16px;
+}
+.container .left-nav .left-nav-box .left-nav-bg {
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  margin-right: 8px;
+  text-align: center;
+  cursor: pointer;
+  text-indent: -0.5px;
+  font-size: 12px;
+}
+.container .left-nav .left-nav-box > span {
+  display: inline-block;
+  width: 72px;
+  text-align: right;
+}
+.container .left-nav .left-nav-box > span > a {
+  color: #333;
+}
+.container .left-nav .left-nav-box > span > a.left-nav-active {
+  color: #ffa01e;
+}
+.container .left-nav .left-nav-active {
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ffa01e;
+  line-height: 34px;
+  text-indent: 0px;
+  margin-bottom: 10px;
+}
+.container .left-nav .left-nav-active .left-nav-bg {
+  background-color: orange;
+  border: none;
+  margin-right: 0;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 34px;
+}
+.container .left-nav .left-nav-line {
+  width: 2px;
+ /*  height: 77px; */
+  height: 35px;
+  overflow: hidden;
+  margin: 0 0 18px 91px;
+  position: relative;
+  border: none;
+  background: #e1e3e7;
+}
+.container .content.tabe-list {
+  margin: 36px 0 0;
+}
+.container .content {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  margin: 10px 0px 0 115px;
+  position: relative;
+}
+.container .content .content-title-little {
+  width: 100%;
+  height: 44px;
+  overflow: hidden;
+  margin: 15px 0 0;
+  position: relative;
+  text-align: left;
+  cursor: auto;
+  color: #000;
+  line-height: 24px;
+  font-family: Microsoft YaHei;
+  padding-left: 10px;
+  font-size: 20px;
+}
+.container .content .content-title {
+  width: 100%;
+  height: 44px;
+  overflow: hidden;
+  margin: 15px 0 0;
+  position: relative;
+  text-align: left;
+  font-size: 20px;
+  cursor: auto;
+  color: #000;
+  line-height: 24px;
+  font-family: Microsoft YaHei;
+  padding-left: 10px;
+}
+.container .content .content-main {
+  width: 99.7%;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  border: 1px solid #e8ebec;
+  background: #fff;
+  border-top: 2px solid #b4cfed;
+}
+.container .content .content-main .content-table {
+  width: 100%;
+  height: auto;
+  overflow: inherit;
+  margin: 0;
+  position: relative;
+  border: none;
+  background: #fff;
+}
+.container .content .content-main .content-table .content-sub-title {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  margin: 8px 0 0;
+  position: relative;
+  text-align: left;
+  font-size: 18px;
+  cursor: auto;
+  color: #000;
+  line-height: 50px;
+  text-indent: 25px;
+}
+.container .content .content-main .content-table .content-table-page {
+  width: 100%;
+  height: 66px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  border-top: 1px solid #efefef;
+}
+.container .content .content-main .content-table .content-table-page .centent-page-box {
+  width: auto;
+  height: 32px;
+  overflow: hidden;
+  margin: 15px 20px 15px 0;
+  position: relative;
+}
+.container .content .content-main .content-table .content-table-page .centent-page-box .page-button ,
+.container .content .content-main .content-table .ui-page-button {
+  width: 66px;
+  height: 22px;
+  overflow: hidden;
+  margin: 3px 10px 0 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #333;
+  line-height: 22px;
+  border: 1px solid #e8ebec;
+  background: #fff;
+}
+.container .content .content-main .content-table .content-table-page .centent-page-box .page-button:hover {
+  border: 1px solid #278bdd;
+  background: #fff;
+}
+.container .content .content-main .content-table .content-table-page .centent-page-box .page-button.disabled {
+  border: 1px solid #e8ebec;
+  background: #fff;
+  text-align: center;
+  font-size: 12px;
+  cursor: auto;
+  color: #999;
+  line-height: 22px;
+}
+.container .content .content-main .content-table .content-table-page .centent-page-box .page-num {
+  width: auto;
+  height: 22px;
+  overflow: hidden;
+  margin: 3px 6px 0 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #000;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 0 5px;
+}
+
+.container .content .content-main .content-table .content-table-page .centent-page-box .page-num.active,
+.container .content .content-main .content-table .content-table-page .centent-page-box .page-num:hover {
+  width: auto;
+  height: 22px;
+  overflow: hidden;
+  margin: 3px 6px 0 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 22px;
+  border: none;
+  background: #278bdd;
+  padding: 0 5px;
+}
+.container .content .content-main .content-table .content-table-box {
+  width: auto;
+  height: auto;
+  margin: 0 15px;
+  position: relative;
+}
+.container .content .content-main .content-table .content-table-box .content-table {
+  border-collapse: separate;
+}
+.container .content .content-main .content-table .content-table-box .content-table-th {
+  width: auto;
+  height: 46px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  cursor: auto;
+  color: #000;
+  line-height: 46px;
+  border: 1px solid #dde7f1;
+  background: #fafcff;
+  border-left: none;
+  border-right: none;
+  font-family: "Microsoft Yahei";
+}
+.container .content .content-main .content-table .content-table-box .content-table-td {
+  width: auto;
+  height: 46px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: auto;
+  color: #666;
+  line-height: 20px;
+  border: 1px solid #efefef;
+  background: #fff;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-indent: 5px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.container .content .content-main .content-table .content-table-box .content-table-td .table-button {
+  width: 54px;
+  height: 26px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 22px;
+  border: none;
+  background: #ffa01e;
+}
+.container .content .content-main .content-table .content-table-box .content-table-td .table-button:hover {
+  border: none;
+  background: #ffb200;
+}
+.container .content .content-main .content-table .content-table-box .content-table-td .table-button:active {
+  border: none;
+  background: #ffa01e;
+}
+.container .content .content-main .content-table .content-table-box .content-table-td .table-button-blue {
+  width: 50px;
+  height: 24px;
+  overflow: hidden;
+  margin: 0 5px;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 20px;
+  border: none;
+  background: #2391e3;
+}
+.container .content .content-main .content-table .content-table-box .content-table-tr td.content-table-td:first-child {
+  text-align: center;
+}
+.container .content .content-main .content-table .content-table-box .content-table-tr .content-table-td:nth-child(4),
+.container .content .content-main .content-table .content-table-box .content-table-tr .content-table-td:last-child {
+  text-align: center;
+}
+.container .content .content-main .content-table .content-table-box .content-table-tr .content-table-td:nth-child(2) {
+  text-align: left;
+}
+.container .content .content-main .content-table .content-table-box .odd .content-table-td {
+  border-bottom: 1px solid #efefef;
+  background: #fafafa;
+}
+.container .content .content-main .content-table .content-table-box .odd .content-table-tr td.content-table-td:first-child {
+  text-align: center;
+  border-left: 5px solid #fafafa;
+}
+.container .content .content-main .content-table .choosedDimPlan {
+  padding-left: 20px;
+  background-color: #f2f5f6;
+  border-top: 1px solid #e8ebec;
+  text-align: left;
+  font-size: 12px;
+  cursor: auto;
+  color: #666;
+  line-height: 52px;
+}
+.container .content .content-main .content-table .choosedDimPlan font {
+  text-align: left;
+  font-size: 12px;
+  cursor: auto;
+  color: #666;
+  line-height: 52px;
+}
+.container .content .content-main .content-type-search {
+  width: 100%;
+  height: 32px;
+  overflow: hidden;
+  margin: 12px 0 10px;
+  position: relative;
+}
+.container .content .content-main .content-type-search .content-type-search-box {
+  width: 292px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0 0 0 20px;
+  position: relative;
+  border: 1px solid #e3e3e3;
+  background: #fff;
+  margin-left: 25px;
+}
+.container .content .content-main .content-type-search .content-type-search-box input {
+  width: 225px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  font-size: 12px;
+  cursor: auto;
+  color: #000;
+  line-height: 30px;
+  padding: 0 0 0 5px;
+}
+.container .content .content-main .content-type-search .content-type-search-box .searchBtn {
+  width: 62px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 30px;
+  border: none;
+  background: #278bdd url(../mcd/assets/images/imcd-bg.png) no-repeat 6px -75px;
+}
+.container .content .content-main .content-type-search .content-type-search-box .searchBtn:hover {
+  border: none;
+  background: #009bf5 url(../mcd/assets/images/imcd-bg.png) no-repeat 6px -75px;
+}
+.container .content .content-main .content-type-search .content-type-search-box .searchBtn:active {
+  border: none;
+  background: #1987e6 url(../mcd/assets/images/imcd-bg.png) no-repeat 6px -75px;
+}
+.container .content .content-main .content-type-search.channel-search {
+  width: 334px;
+  height: 34px;
+  overflow: hidden;
+  margin: 13px 25px 0 0;
+  position: relative;
+}
+.container .content .content-main .content-btn-box {
+  width: 100%;
+  height: 32px;
+  overflow: hidden;
+  margin: 20px 0 20px;
+  position: relative;
+}
+.container .content .content-main .content-btn-box .calculate-customer-num {
+  width: 183px;
+  height: 32px;
+  overflow: hidden;
+  margin: 0 0 0 15px;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 28px;
+  border: none;
+  background: #278bdd;
+  font-family: "Microsoft Yahei";
+}
+
+.left-nav-box2 a{
+	width:60px;
+	display:block;
+	line-height:20px;
+	text-align:right;
+}
+.left-nav-bg2{
+	top:-20px;
+}
+.logRecordCT {
+  margin: 40px 110px 0 250px;
+  padding-bottom: 1px;
+  border-left: 2px solid #e3e3e3;
+}
+.logrow {
+  margin-bottom: 35px;
+}
+.recordLeft {
+  float: left;
+  width: 170px;
+  margin-left: -170px;
+  text-align: center;
+}
+.recordRight {
+  margin-left: 40px;
+}
+.recordPoint {
+  float: right;
+  list-style: none;
+  padding: 1px;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  margin: 0 -11px 0 0;
+  border-radius: 12px;
+  background-color: #efefef;
+}
+.recordPoint .point {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0px auto;
+  border-radius: 6px;
+  background-color: #626262;
+}
+.recordLeft .bluebar {
+  max-height: 50px;
+  line-height: 25px;
+  margin: -5px auto 0 auto;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #51aefc;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.5px;
+  min-height: 34px;
+}
+.icon_arrRight {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-left: 5px solid #51aefc;
+  vertical-align: middle;
+}
+.recordLeft .txt {
+  float: left;
+  width: 135px;
+  color: #666;
+  font-family: "Arial Black";
+}
+.recordLeft p {
+  width: 128px;
+  padding: 3px 0 0 0;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+}
+.recordLeft .bluebar .icon_arrRight {
+  float: right;
+  margin: 12px -9px 0 0;
+}
+.recordLeft .txt > span {
+  display: block;
+  width: 128px;
+  margin: 2px auto auto;
+  font-size: 12px;
+  font-weight: normal;
+}
+.recordRight h4 {
+  height: 26px;
+  line-height: 24px;
+  text-indent: 3px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.recordRight .log {
+  padding: 13px 19px;
+  background-color: #f4f5f7;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.icon_arrLeft {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-right: 6px solid #f4f5f7;
+  vertical-align: middle;
+}
+.recordRight .log .icon_arrLeft {
+  float: left;
+  margin-left: -29px;
+  margin-top: 6px;
+}
+
+.btnOrange {
+  padding: 5px 15px;
+  background-color: #ffa01e;
+  color: #fff;
+  cursor: pointer;
+}
+.bg-white {
+  border: none;
+  background: #fff;
+}
+.mt20 {
+  margin: 20px 0 0 !important;
+}
+.container{
+	padding:0 !important;
+}
+.container.tabbox .left-nav {
+  position: static;
+  float: left;
+}
+.tacticsInfo-header {
+  width: 1250px;
+  height: 88px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border: none;
+  background-color: #616161;
+}
+.tacticsInfo-header h1 {
+  width: auto;
+  height: 88px;
+  overflow: auto;
+  margin: 0 auto 0 58px;
+  position: relative;
+  text-align: left;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 88px;
+  float: left;
+  font-family: "微软雅黑";
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+.tacticsInfo-header .logo {
+  width: 180px;
+  height: 88px;
+  overflow: hidden;
+  margin: 0 56px;
+  position: relative;
+  border: none;
+  background: url(../../../../images/imcd-bg.png) no-repeat -7px -251px;
+  float: right;
+}
+.tactics-state {
+  width: 1250px;
+  height: auto;
+  overflow: visible;
+  margin: 0 auto;
+  position: relative;
+  border: none;
+  background-color: #f7f7f7;
+  padding: 25px 0 0 0;
+}
+.tactics-state dl {
+  margin: 0 60px;
+}
+.tactics-state dl dt {
+  width: auto;
+  height: 60px;
+  overflow: auto;
+  margin: 0 auto;
+  position: relative;
+  text-align: left;
+  font-size: 16px;
+  cursor: auto;
+  color: #000;
+  line-height: 42px;
+  font-weight: bold;
+  font-family: "微软雅黑";
+}
+.tactics-state dl dd {
+  border: 1px solid #efefef;
+  background-color: #ffffff;
+  padding: 10px;
+  font-size:12px;
+}
+.tactics-state dl dd table {
+  width: 100%;
+}
+.tactics-state dl dd table td {
+  padding: 8px 12px;
+}
+.container.tabbox {
+  display: none;
+  padding-bottom: 20px;
+}
+.container.tabbox.active {
+  display: block;
+}
+.container #subCamsegBoxesCT .box {
+  display: none;
+}
+.container #subCamsegBoxesCT > .active.box {
+  display: block;
+}
+.container .content {
+  padding: 0;
+ /*  margin: 36px 0 0 115px; */
+}
+.container .content .content-main {
+  border: none;
+  background: #fff;
+  border-top: 2px solid #b4cfed;
+}
+.container .content .content-main .intrTxt {
+  text-align: left;
+  font-size: 14px;
+  cursor: auto;
+  color: #888;
+  line-height: 14px;
+  padding-top: 12px;
+}
+.container .content .content-main .content-table-title {
+  text-align: center;
+  font-size: 16px;
+  cursor: auto;
+  color: #666;
+  line-height: 14px;
+  font-weight: bold;
+  padding: 14px 0 14px 0;
+}
+.container .content .content-main .content-table-message {
+  border: 1px solid #efefef;
+  background: #fff;
+  width: 99.8%;
+  height: 60px;
+  overflow: hidden;
+  margin: 20px auto 0;
+  position: relative;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  line-height: 60px;
+  border-bottom: none;
+}
+.container .content .content-main .content-table-message span {
+  padding: 0;
+  margin: 0 20px;
+}
+.container .content .content-main .content-table-message .customer-num-box {
+  width: 280px;
+  height: 60px;
+  overflow: auto;
+  margin: 0;
+  position: relative;
+  text-align: right;
+/*   font-size: 18px; */
+/*   cursor: pointer; */
+  color: #333;
+  line-height: 60px;
+  padding: 0 5px 0 0;
+  margin: 0 15px 0 0;
+}
+.container .content .content-main .content-table-message .customer-num-box .customer-num-more {
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  top: 21px;
+  right: 0px;
+  z-index: 99;
+  border: none;
+  background: url(../../../../images/imcd-bg.png) no-repeat -578px -4px;
+}
+.container .content .content-main .content-table-message.active,
+.container .content .content-main .content-table-message:hover {
+  background: #f7f7f7;
+}
+.container .content .content-main .content-table-message.active .border-active,
+.container .content .content-main .content-table-message:hover .border-active {
+  width: 5px;
+  height: 60px;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  z-index: 99;
+  border: none;
+  background: #278bdd;
+  display: block;
+}
+.container .content .content-main .content-customer-detail {
+  width: 99.8%;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #efefef;
+  background: #fafcff;
+  z-index: 99;
+}
+.container .content .content-main .content-customer-detail .content-customer-detail-inner {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  margin: 0 30px;
+  position: relative;
+}
+.container .content .content-main .content-customer-detail .content-customer-detail-inner .customer-description {
+  width: 100%;
+  height: 74px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  font-size: 12px;
+  cursor: auto;
+  color: #666;
+  line-height: 24px;
+  padding: 6px 0 0;
+  margin: 0;
+}
+.container .content .content-main .content-customer-detail .content-customer-detail-inner .customer-description p {
+  width: 100%;
+  height: 24px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+.container .content .content-main .content-customer-detail .content-customer-detail-inner .customer-attribute {
+  width: 100%;
+  height: 48px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  font-size: 12px;
+  cursor: auto;
+  color: #666;
+  line-height: 48px;
+  border-bottom: 1px solid #efefef;
+}
+.container .content .content-main .content-customer-detail .content-customer-detail-inner .customer-attribute span {
+  padding: 0;
+  margin: 0 30px;
+}
+.container .content .content-main .content-customer-detail .content-customer-detail-inner .customer-attribute span:first-child {
+  padding: 0;
+  margin: 0 30px 0 0;
+}
+.container .content .content-main .content-table .content-table-list {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  margin: 0;
+  position: relative;
+}
+.container .content .content-main .content-table .content-table-list .content-table-th,
+.container .content .content-main .content-table .content-table-list .content-table-td {
+  border: 1px solid #efefef;
+  text-align: center;
+}
+.container .content .content-main .content-table .content-table-list .content-table-td {
+  background: #fff;
+}
+.container .content .content-main .content-table .content-table-list tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+.container .content .content-main .content-table .content-table-list td .progressBar {
+  margin-left: 10px;
+}
+.container .content .content-main .content-table .content-table-list tfoot td {
+  text-align: center;
+  font-size: 12px;
+  cursor: auto;
+  color: #666;
+  line-height: 48px;
+  border: 1px solid #e6e3e3;
+  background: #f1f5f6;
+}
+.container .content .content-main .content-table .content-table-list .mtlStcPlanDetailTr {
+  display: none;
+}
+.container .content .content-main .content-table .content-table-list .mtlStcPlanDetailTr .mtlStcPlanDetail {
+  padding: 10px 20px;
+  border: 1px solid #efefef;
+  background: #fafcff;
+  border-top: none;
+}
+.container .content .content-main .content-table .content-table-list .J_click td {
+  cursor: pointer;
+}
+.tactics-info-detail-state {
+  border: 2px solid orange;
+  text-align: center;
+  height: 28px;
+  min-width: 150px;
+  margin: 5px 0 0 40px;
+  color: orange;
+  display: inline;
+  position: absolute;
+  line-height: 28px;
+  font-family: "宋体";
+}
+.content-table2{
+	width: 100%;
+    height: auto;
+    overflow: auto;
+    margin: 0;
+    position: relative;
+}
+    
+.content-table-th2{
+	border: 1px solid #efefef;
+	text-align: center;
+	height:40px;
+}
+.content-table-td2{
+	border: 1px solid #efefef;
+	text-align: center;
+	height:30px;
+	width:14%;
+}
+
+.ui-content-title-date{
+	float: right;
+	height: 44px;
+	line-height: 44px;
+	margin: 0 30px 0 0;
+}    
+.ui-content-title-date > li{
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	margin: 10px 5px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+	color: #333;
+	padding: 0 4px;
+	cursor: pointer;
+} 
+.ui-content-title-date > li > input{
+	height: 24px;
+	line-height: 24px;
+	width: 70px;
+	border: 1px solid #c6c6c6;
+} 
+.ui-content-title-date > li.active{
+	color: #fff;
+	background: #278bdd;
+}
+.container .left-nav .left-nav-box > a,
+.container .left-nav .left-nav-active > a{
+	color: #333;
+}
+.ui-sub-table{
+	background: #bbb;
+}
+.ui-div-table {
+	margin:0;
+	overflow:hidden;
+}
+.tactics-state-tab {
+  width: auto;
+  height: 44px;
+  overflow: visible;
+  margin: 0;
+  position: relative;
+  padding: 0 0 0 60px;
+  margin: 30px 0 0 0;
+  border: 1px solid #efefef;
+  background-color: #f7f7f7;
+  border-left: none;
+  border-right: none;
+}
+.tactics-state-tab li {
+  display: inline-block;
+  width: auto;
+  height: 42px;
+  overflow: hidden;
+  position: relative;
+  padding: 0 12px;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  line-height: 42px;
+}
+.tactics-state-tab li.active {
+  margin-top: -1px;
+  line-height: 40px;
+  background-color: #fff;
+  border-top: 4px solid #278cde;
+}
+.navHeader {
+    width: 1250px;
+    margin: 15px auto;
+    position:relative;
+}
+.tactics-info-detail-campname {
+	text-overflow:ellipsis;
+	width:400px;
+	overflow:hidden;
+	display:inline-block;
+	white-space: nowrap;
+}
+#dataInfo {
+    left: 290px;
+    top: 0px;
+    position: absolute;
+    width: 190px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    border-left: 1px solid #e4e4e4;
+    font-family: SimHei;
+}

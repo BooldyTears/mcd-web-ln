@@ -1,0 +1,6 @@
+	<span channelId="" class="active">不限</span>
+	<%if(data.length > 0){%>
+		<%for(var i=0;i<data.length;i++){%>
+			<span channelId="<%=data[i].channelId%>" displayOrder="<%=data[i].displayOrder%>" ><%=data[i].channelName%></span>
+		<%}%>
+	<%}%>

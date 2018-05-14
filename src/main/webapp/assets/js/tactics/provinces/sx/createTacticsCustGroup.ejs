@@ -1,0 +1,38 @@
+<%if(data.length > 0){%>
+	<%for(var i=0;i<data.length;i++){
+		var item=data[i];
+		if(customGroupId == item.customGroupId){
+
+	%>
+	<li class="active" customGroupId="<%=item.customGroupId%>" >
+	<%
+	   }else{
+	%>
+	<li customGroupId="<%=item.customGroupId%>" >
+	<%
+	   }
+	%>
+		<div class="group-box">
+			<div class="group-box-header">
+				<span class="group-box-header-name" title="<%=item.customGroupName%>"><%=item.customGroupName%></span> <span
+					class="selected-img selected-right"></span>
+			</div>
+			<div class="group-box-info">
+				<div class="group-box-info-item group-box-info-item-circle">
+					<span>更新周期：</span> <span class="group-box-info-circle-value"><%=item.custGroupUpdateCycle%></span>
+				</div>
+				<div class="group-box-info-item group-box-info-item-num">
+					<span>客户群规模：</span> <span class="group-box-info-num-value"><%=item.customNum%></span>
+	
+				</div>
+				<div class="group-box-info-item group-box-info-item-creater">
+					<span>创建人：</span> <span class="group-box-info-creater-value"><%=item.createUserName%></span>
+				</div>
+				<div class="group-box-detail">
+					<a href="javascript:;">详情&gt; </a>
+				</div>
+			</div>
+		</div>
+	</li>
+	<%}%>
+<%}%>

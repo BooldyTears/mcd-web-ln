@@ -1,0 +1,11 @@
+<div class="fleft content-type-tite">业务：</div>
+<div class="fleft content-type-list">
+	<div class=" content-type-item-inner">
+		<div class="content-type-inner">
+			<span class="fleft content-type-box J_campType" campDrvId="">全部</span>
+			<%for(var i = 0;i<data.length;i++){%>
+			<span class="fleft content-type-box J_campType" campDrvId="<%=data[i].campDrvId%>"><%=data[i].campDrvName%></span>
+			<%}%>
+		</div>
+	</div>
+</div>

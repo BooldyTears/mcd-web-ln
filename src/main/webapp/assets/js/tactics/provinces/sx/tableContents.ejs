@@ -1,0 +1,26 @@
+<%if(data.length > 0){%>
+	<%
+	for(var i=0;i<data.length;i++){
+		var item=data[i];
+		var index=i+1;
+		
+		var moreInfo ={};
+		moreInfo.contentId = item.contentId;
+		moreInfo.contentName = item.contentName;
+		moreInfo.contentDesc = item.contentDesc;
+		moreInfo.contentRecommendInfo = item.contentRecommendInfo;
+		var info = JSON.stringify(moreInfo)
+		info = info.replace(/"/g,"'");
+		
+	%>
+	<tr data-info="<%=info%>">
+		<td class="text-center"><%=index%></td>
+		<td class="text-left text-overflow" title="<%=item.contentId%>"><%=item.contentId%></td>
+		<td class="text-center text-overflow" title="<%=item.contentName%>"><%=item.contentName%></td>
+		<td class="text-center text-overflow" title="<%=item.contentDesc%>"><%=item.contentDesc%></td>
+		<td class="text-center" >
+			<button type="button" class="btn-a btn-a-blue" data-id="<%=item.contentId%>" style="width:54px;height:24px;">确定</button>
+		</td>
+	</tr>
+	<%}%>
+<%}%>

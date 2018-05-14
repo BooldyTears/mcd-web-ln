@@ -1,0 +1,136 @@
+<!-- 产品详情-查看和修改弹窗 -->
+<%
+    var planTypes = planDetailBO.planTypes;//类型数据对象 【数组】
+    var planStatus = planDetailBO.planStatus;//状态数据对象 【数组】
+    var channels = planDetailBO.channel;//渠道
+    var citys = planDetailBO.city;//适用城市
+%>
+<div id="addDiv" class="edit-dialog-box container" style="display: none">
+	<div class="own-dialog edit-dialog">
+		<!-- 内容区 -->
+		<form class="form-horizontal ft12">
+			<div class="rows-box">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">产品编码： </label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control"  id="addPlanCode">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">产品名称： </label>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" id="addPlanName"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">类别：</label>
+							<div class="col-xs-6">
+								<select  id="addTypeName" class="form-control" disabled="disabled">
+									<%
+										for(var i = 0;i < planTypes.length;i++){
+											if(planTypes[i].typeId === '999'){
+									%>
+											<option value="<%=planTypes[i].typeId%>"><%=planTypes[i].typeName%></option>
+									<%	
+										}}
+									%>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">生效时间： </label>
+							<div class="col-xs-6">
+								<input id="planStartDate" class="form-control Wdate Wdate-own-new" type="text"   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">失效时间： </label>
+							<div class="col-xs-6">
+								<input id="planEndDate" class="form-control Wdate Wdate-own-new" type="text"   onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})"/>							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">状态：</label>
+							<div class="col-xs-6">
+								<select  id="addOnlineStatus" class="form-control" >
+									<%
+										for(var i = 0;i < planStatus.length;i++){
+										var disabledFlag =  planStatus[i].statusId == 1 ? "selected" : "";
+									%>
+											<option value="<%=planStatus[i].statusId%>" <%=disabledFlag%> ><%=planStatus[i].statusName%></option>
+									<%	
+										}
+									%>	
+								</select>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label"> 适用渠道：</label>
+							<div class="col-xs-6" id="addChannelSelDiv" disabled="disabled">
+								<input type="text" class="form-control"  id="addChannelSel" value="全部" disabled="disabled">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label"> 适用地市：</label>
+							<div class="col-xs-6" id="addCitySelDiv">
+								<select class="form-control" id="addCitySel" multiple="multiple" >
+								<%
+									for(var i = 0;i < citys.length;i++){
+								%>
+								    <option value="<%=citys[i].CITY_ID%>"><%=citys[i].CITY_NAME%></option>
+								<%
+									}
+								%>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">产品经理： </label>
+							<div class="col-xs-6">
+								<input type="text" id="addManager"  class="form-control">
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="col-xs-2 width-118 control-label">描述： </label>
+							<div class="col-xs-10">
+								<textarea id="planDesc" class="form-control" ></textarea>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+				
+			</div><!--rows-box-->
+			<div class="text-center mbot_15">
+				<span id="save-divs"  ><a href="javascript:;" id="addPlan" class="btn-a btn-a-blue btn100-30">保存</a></span>
+				<span id="return-divs"><a href="javascript:;" id="closePlan" class="btn-a btn-a-gray-light btn100-30">返回</a></span>
+			</div>
+		</form>
+	</div><!--dialog end-->
+</div>

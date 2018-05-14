@@ -1,0 +1,93 @@
+<table class="content-table">
+	<tr>
+		<th class="content-table-th" style="width:5%">序号</th>
+		<th class="content-table-th" style="width:20%" >策略编号及名称</th>
+		<th class="content-table-th">执行周期</th>
+		<th class="content-table-th">地市</th>
+		<th class="content-table-th">状态</th>
+		<th class="content-table-th">创建人</th>
+		<th class="content-table-th"  style="text-align:left;padding-left:30px; width:240px;">操作</th>
+	</tr>
+	<%for(var i = 0;i<data.result.length;i++){%>
+		<tr class="even content-table-tr <%if(i%2==1){%>odd<%}else{%>even<%}%>" >
+			<td class="content-table-td">
+                <%if(data.result[i].hasError){%>
+				<span  style="margin-right: 5px" ><img width="15px" height="15px" src="../../assets/images/error.png"/></span>
+                <%}%>
+				<%=i+1%></td>
+			<td class="content-table-td" style="width:380px;">
+				<a href="<%="tacticsInfo.jsp?campsegId="+data.result[i].campsegId%>" target="_blank" style="white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:350px;display: block;" title="<%=data.result[i].campsegId%>&nbsp;<%=data.result[i].campsegName%>">
+					<%=data.result[i].campsegId%>&nbsp;<%=data.result[i].campsegName%>
+				</a>
+			</td>
+			<td class="content-table-td align_center" campsegid="<%=data.result[i].campsegId%>" enddate="<%=data.result[i].endDate%>"><%=data.result[i].startDate%>到<%=data.result[i].endDate%></td>
+			<td class="content-table-td"><%=data.result[i].cityName%></td>
+			<td class="content-table-td">
+				<ul class="stateSteps">
+					<%for(var j = 0;j<5;j++){
+						if(parseInt(data.result[i].campsegStatSiteId)==(function(x){return x})(j+1)){%>
+							<li class="circle active">
+								<div class="point"></div>
+								<div class="line"></div>
+								<span><%=data.result[i].campsegStatName%></span>
+							</li>
+						<%}else{%>
+							<li>
+								<div class="point"></div>
+								<div class="line"></div>
+							</li>
+						<%}%>
+					<%}%>
+				</ul>
+			</td>
+			
+			<td class="content-table-td align_center"><%=data.result[i].createUserName%></td>
+	
+			<td class="content-table-td align_center J_manageTd">
+			  <%
+					  var onlyCpoyArr = ["91","90","59","54","50","40","48","49"];
+					  var statusId = data.result[i].campsegStatId+"";
+					  data.result[i].manageBtnDisplay="visible";
+					  if($.inArray(statusId, onlyCpoyArr) != -1){
+						if((data.result[i].DQ_2+"")!="1"){
+						  data.result[i].manageBtnDisplay="hidden";		
+						} 
+					
+					  }
+					  if(data.result[i].taskStatusId=="30"){
+					  	data.result[i].manageBtnDisplay="hidden";
+					  }
+					  //isMy=0是当前用户自己的；isShowOper=="1":当前用户有管理权限
+					  if(data.result[i].isMy!=0 && isShowOper=="0"){
+					      data.result[i].manageBtnDisplay="hidden";
+					  }
+					%>
+	
+				<div class=" controls manage J_manageBtnAll <%=data.result[i].manageBtnDisplay%>" style="visibility:<%=data.result[i].manageBtnDisplay%>" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>" DQ_2="<%=data.result[i].DQ_2%>">
+					<span class="txt J_manageBtnAll" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>">管理</span>
+					<div class="icon J_manageBtnAll" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>">
+						<span class="icon_arrDown J_manageBtnAll" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>"></span>
+					</div>
+				</div>
+				<div class=" controls manage J_activityBtnAll" <%=(data.result[i].isMy==0||isShowOper=="1") ? (data.result[i].campsegStatId == 20 || data.result[i].campsegStatId == 91||data.result[i].campsegStatId == 90 || data.result[i].campsegStatId == 41|| data.result[i].campsegStatId == 48) ?  'style="display:none;"': '': 'style="display:none;"' %> statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>">
+					<span class="txt J_activityBtnAll" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>">活动管控</span>
+					<div class="icon J_activityBtnAll" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>">
+						<span class="icon_arrDown J_activityBtnAll" statusId="<%=data.result[i].campsegStatId%>" isMy="<%=data.result[i].isMy%>" campsegId="<%=data.result[i].campsegId%>"></span>
+					</div>
+				</div>
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan="7" class="nopadding no-cursor">
+				<div class="tableOuter">
+					
+				</div>
+			</td>
+		</tr>
+	<%}%>
+</table>
+<div class="content-table-page">
+	<div id="tacticsManagerPageAll" class="fright clearfix centent-page-box">
+	</div>
+</div>

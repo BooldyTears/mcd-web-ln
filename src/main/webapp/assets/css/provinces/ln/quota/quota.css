@@ -1,0 +1,365 @@
+body{
+	background: #fcfcfc;
+  font-family: "Microsoft Yahei";
+}
+.container{
+  position: relative;
+  width: 1250px;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 30px 0px;
+}
+
+
+.detail-content-box{
+   position: relative;
+	 width: 582px;
+	 border:1px solid #f4f4f4;
+	 border-top:2px solid #268bdd;
+}
+.rMargin5{margin-right: 5px!important;}
+/* 编辑操作 */
+.icon_search , .icon_edit , .icon_save , .mark_red{
+  display: inline-block;
+  width: 18px;
+  height: 20px;
+  background: transparent url(../../../../images/quota/detail_edit.png) no-repeat center 1px;
+  border:none;
+}
+.icon_save.active{
+   background-position: center -21px;
+}
+.icon_edit{
+   background-position: center -43px;
+}
+.icon_search{
+   background-position: center -65px;
+}
+.mark_red{
+  width: 15px;
+  height: 15px;
+   background-position: center -93px;
+}
+/*字体颜色 */
+.wathet{
+  color:#009bf5!important;
+}
+.orange{
+  color: #ffbb66!important;
+}
+.red{
+  color: #ff0000!important;
+}
+
+.detail-title{
+  height: 41px;
+  border-bottom: 1px solid #fafcff;
+}
+.detail-title dl{
+  overflow:hidden;
+  padding-top: 14px;
+  padding-left: 5px;
+}
+.detail-title dl dt , .detail-title dl dd{
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  font-size: 14px;
+  color: #000;
+}
+.detail-title dl dt i , .detail-title dl dd i{
+  position: relative;
+  top:3px;
+  float: left;
+  display: inline-block;
+  width: 2px;
+  height: 12px;
+  background: #009bf5;
+}
+.detail-title dl dt span{
+  padding: 0px 10px;
+}
+.detail-title dl dd i{
+  width: 1px;
+  margin-right: 8px;
+}
+.detail-title dl dd input{
+  width: auto;
+  font-size: 12px;
+  background: transparent;
+  color: #6692f9;
+ /*  cursor: pointer; */
+}
+.detail-title ol{
+  overflow: hidden;
+  padding-top: 11px;
+}
+.detail-title ol li{
+  float:left;
+  height: 20px;
+  margin-right: 20px;
+}
+.limitInput{
+  position: absolute;
+  left:-1px;
+  top:-1px;
+  z-index: 10;
+  display: none;
+  width:167px;
+  height:51px;
+  background: transparent;
+  text-align: center;
+  border:1px solid #a5c5e0;
+}
+.limitInput:focus{
+  z-index: 20;
+  border-color: #009bf5;
+}
+/* 表格定义 */
+.common-table-box , .calendar-table-box{
+   background: #fff;
+   padding:0px 14px;
+}
+
+.common-table , .calendar-table{
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+}
+.common-table caption{text-align: right;}
+.common-table tr th{
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  border: 1px solid #dde7f1;
+  border-left: none;
+  border-right: 1px solid #efefef;
+  background: #fafcff;
+}
+.common-table tr th:last-child , .calendar-table tbody tr td:first-child{
+  border-left: none;
+}
+.common-table tr td:last-child , .calendar-table tbody tr td:last-child{
+	border-right: none;
+}
+.common-table tbody tr td {
+  position: relative;
+  height: 50px;
+  line-height: 20px;
+  color: #666;
+  background: #fff;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.common-table tbody tr:nth-child(odd) td , .calendar-table tr:nth-child(odd) td{
+  background: #fcfcfc;
+}
+.month-table-box{
+	height:300px;
+	overflow:auto;
+}
+/* 日历表格 */
+.calendar-table tr th{
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  color: #000;
+}
+.calendar-table tbody tr td {
+  position: relative;
+  height: 78px;
+  color: #666;
+  background: #fff;
+  border: 1px solid #f4f4f4;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.calendar-table tbody tr td.editable{
+  border:1px solid #a5c5e0!important;
+}
+.totalRemain{
+  font-size: 18px;
+}
+.totalRemain span{
+  color: #009bf5!important;
+}
+.date , .limitMoneyShow , .limitMoneyInput{
+  color: #c0c0c0;
+  height: 34px;
+  line-height: 34px;
+}
+
+.limitMoneyShow , .limitMoneyInput{
+  margin-top:9px;
+  color: #999;
+  font-size: 14px;
+  text-align:center;
+}
+.limitMoneyInput{
+  display:block;
+  width:100%;
+  margin-top:0;
+}
+.tdBox{
+  position: absolute;
+  left: -1px;
+  top:-1px;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border:1px solid #f5f5f5;
+  background:#fff;
+}
+.calendar-table tbody tr:nth-child(odd) .tdBox{
+	  background:#fcfcfc;
+}
+.tdBox.editable{
+  border:1px solid #a5c5e0;
+}
+.tdBox.editable .limitMoneyInput{
+  display: none;
+}
+.tdBox.editable.active{
+  z-index: 20;
+  border-color: #009bf5;
+}
+.tdBox.editable.active .date{
+  /* visibility:hidden; */
+}
+.tdBox.editable.active .limitMoneyShow{
+  display:none;
+}
+
+.tdBox.editable.active .limitMoneyInput{
+  display: block;
+}
+.limit_state{
+  position: absolute;
+  left: 0px;
+  top:0px;
+  z-index: 15;
+  width: 78px;
+  height: 77px;
+}
+.limit_state a{
+  cursor:default;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: transparent url(../../../../images/quota/detail_edit.png) no-repeat center -117px;
+}
+.limit_state.active{
+  background: #009bf5;
+  color: #fff;
+}
+.limit_state.active a ,.limit_state .limit_txt ,.limit_state .limit_number{
+  display: none;
+}
+.limit_state .limit_txt {
+  height: 40px;
+  line-height: 40px;
+}
+.limit_state .limit_number {
+  font-size: 14px;
+  height: 34px;
+  line-height: 34px;
+}
+
+.limit_state.active .limit_txt , .limit_state.active .limit_number{
+  display: block;
+}
+
+
+
+
+
+
+
+
+/* 自定义弹出层 */
+.shade{
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left:0px;
+  top:0px;
+  z-index: 10;
+  background: #000;
+  opacity: 0.2;
+}
+.promptLayer{
+  display: none;
+  position: absolute;
+  width: 290px;
+  height:174px;
+  left:50%;
+  top:50%;
+  margin-left: -145px;
+  margin-top: -87px;
+  z-index: 30;
+  border:1px solid #278bdd;
+  background: #fff;
+}
+.promptLayer .header{
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #278bdd;
+  color: #fff;
+  font-size: 14px;
+}
+.promptLayer .body{
+  width: 262px;
+  height: 95px;
+  margin:0 auto;
+}
+.promptLayer .body ol{
+   padding-top: 40px;
+}
+.promptLayer .body ol li{
+  line-height: 14px;
+  height: 24px;
+}
+.promptLayer .body ol li p{
+  color:#666;
+}
+.promptLayer .footer ol{
+   overflow: hidden;
+   height: 30px;
+}
+.promptLayer .footer ol li{
+  float: left;
+  height: 28px;
+  width: 50%;
+}
+.promptLayer .footer ol li button{
+  margin:0 auto;
+  text-align: center;
+}
+.cancelBtn , .sureBtn{
+  display:block;
+  width: 80px;
+  height: 26px;
+  background: #fff;
+  border:1px solid #999;
+  color: #999;
+}
+.sureBtn{
+  border:1px solid #009bf5;
+  color: #009bf5;
+}
+
+.descTip{
+background:#fff;
+padding:15px 20px;
+font-size:14px;
+color:#666;
+}
+.saveCbx input[type="checkbox"]{
+	margin:1px 0 0 20px;
+}
